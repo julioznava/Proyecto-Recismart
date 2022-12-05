@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0*w53))2l=nn0oi7x((3!yq1d2lxlr5#!mm03-ys7$r8ua_$x7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['recismart-pre-production.up.railway.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
