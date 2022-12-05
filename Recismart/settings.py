@@ -28,7 +28,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
   'localhost',
   '127.0.0.1',
-  'https://recismart-pre-production.up.railway.app']
+  'recismart-pre-production.up.railway.app']
 
 # Application definition
 
