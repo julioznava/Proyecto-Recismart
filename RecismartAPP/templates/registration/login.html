@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+{% load crispy_forms_tags %}
+{#<section class="vh-100">#}
+{#  <div class="container py-5 h-100">#}
+{#    <div class="row d-flex align-items-end justify-content-lg-start h-80">#}
+{#      <div class="col-md-8 col-lg-7 col-xl-6">#}
+{#        <div class="row row-cols-auto col-lg-12">#}
+{#            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"#}
+{#          class="img-fluid" alt="Phone image">#}
+{#        </div>#}
+{#          <div class="row">#}
+{#              <div class="card card-body">#}
+{#                  <form class="" action="" method="post">#}
+{#                    {% csrf_token %}#}
+{#                    {{ form | crispy }}#}
+{#                  <div class="d-flex justify-content-start align-items-center mb-4">#}
+{#                    <!-- Checkbox -->#}
+{#                       &nbsp;#}
+{#                    <a href="#!">Perdiste tu contraseña?</a>#}
+{#                  </div>#}
+{##}
+{#                  <!-- BOTONES -->#}
+{#                  <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Inicio</button>#}
+{#                    &nbsp;#}
+{#                  <button type="submit" class="btn btn-outline-dark btn-lg">Registrese aqui!</button>#}
+{#                </form>#}
+{#              </div>#}
+{#          </div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</section>#}
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+          <div class="col-md-8 col-lg-7 col-xl-6">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+              class="img-fluid" alt="Phone image">
+          </div>
+          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+              <h2 class="text-center">Acceso usuarios</h2>
+              <hr>
+              <br>
+            <form class="" method="post">
+                {% csrf_token %}
+                {{ form | crispy}}
+              <div class="d-flex justify-content-around align-items-center mb-4">
+                <!-- Checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                  <label class="form-check-label" for="form1Example3"> Recuerdame </label>
+                </div>
+                <a href="#!">Olvido su contraseña?</a>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
+

@@ -1,0 +1,13 @@
+pillow
+django-admin-interface
+django-crispy-forms
+psycopg2
+mysqlclient
+asgiref
+Django
+gunicorn
+pip
+setuptools
+sqlparse
+tzdata
+wheel

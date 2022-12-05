@@ -1,0 +1,102 @@
+{%  include 'navbar2.html' %}
+
+    <br>
+    <div class="row text-center">
+            <div class="col-md-6 " >
+                <h5>LISTADO DE RECOLECTORES REGISTRADOS</h5>
+                <hr>
+                <div class="card card-body">
+                    <br>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-" type="search" placeholder="Buscar por Rut, Nombre, Apellido..." aria-label="Search" name="busqueda_recolector">
+                    </form>
+                    <br>
+                    <table class="table table-responsive-md thead-light text-center" >
+                        <tr>
+                            <th>Rut</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Telefono</th>
+                            <th>Nombre empresa</th>
+                        </tr>
+                            {% for recolector in listarrecolector %}
+                        <tr>
+                            <td>{{ recolector.Rut_Empresa }}</td>
+                            <td>{{ recolector.Nombre }}</td>
+                            <td>{{ recolector.Apellido }}</td>
+                            <td>{{ recolector.Telefono }}</td>
+                            <td>{{ recolector.Nombre_de_empresa }}</td>
+                            <td><a class="btn btn-success" href="#">Habilitar</a></td>
+                            <td><a class="btn btn-danger" href="#">Deshabilitar</a></td>
+                        </tr>
+                            {% endfor %}
+                    </table>
+                </div>
+            </div>
+
+        <div class="col-sm-12 col-md-6 text-center">
+            <h5>LISTADO DE USUARIOS REGISTRADOS</h5>
+            <hr>
+            <div class="card card-body">
+                <br>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-" type="search" placeholder="Buscar por Rut, Nombre, Apellido..." aria-label="Search" name="busqueda_usuario">
+                </form>
+                <br>
+                <table class="table table-sm">
+                    <tr>
+                        <th>Rut</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Correo_electronico</th>
+                        <th>Comuna</th>
+                    </tr>
+                    {% for usuarios in listarusuario %}
+                        <tr>
+                        <td>{{ usuarios.Rut }}</td>
+                        <td>{{ usuarios.Nombre }}</td>
+                        <td>{{ usuarios.Apellido }}</td>
+                        <td>{{ usuarios.Correo_electronico }}</td>
+                        <td>{{ usuarios.Comuna }}</td>
+                        <td><a class="btn btn-success" href="#">Habilitar</a></td>
+                        <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+
+        <div class="col-md-12" >
+                <br>
+                <br>
+                <br>
+                <h5 style="text-align: center">HISTORICO DE PUBLICACIONES</h5>
+                <hr>
+                <div class="card card-body">
+                    <br>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-" type="search" placeholder="Buscar por Titulo o Descripcion..." aria-label="Search" name="busqueda_aviso">
+                    </form>
+                    <br>
+                    <table class="table table-responsive-md thead-light text-center" >
+                        <tr>
+                            <th>Titulo publicacion</th>
+                            <th>Descripcion</th>
+                            <th>Comuna</th>
+                            <th>Region</th>
+                        </tr>
+                            {% for avisos in listaraviso %}
+                        <tr>
+                            <td>{{ avisos.Titulo_de_publicacion }}</td>
+                            <td>{{ avisos.Descripcion }}</td>
+                            <td>{{ avisos.Comuna }}</td>
+                            <td>{{ avisos.Region }}</td>
+                            <td><a class="btn btn-success" href="#">Habilitar</a></td>
+                            <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
+                        </tr>
+                            {% endfor %}
+                    </table>
+                </div>
+        </div>
+    </div>
