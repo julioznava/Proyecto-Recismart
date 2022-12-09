@@ -30,7 +30,7 @@ DEBUG = False
 
 #  EN RAILWAY
 
-ALLOWED_HOSTS = ['recismart-pre-production-d4f3.up.railway.app']
+ALLOWED_HOSTS = ['recismart-pre-production-8366.up.railway.app']
 
 # LOCAL
 # ALLOWED_HOSTS = []
@@ -169,4 +169,4 @@ CLOUDINARY_STORAGE = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ['https://recismart-pre-production-d4f3.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://recismart-pre-production-8366.up.railway.app']
