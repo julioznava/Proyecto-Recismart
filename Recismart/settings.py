@@ -33,7 +33,7 @@ DEBUG = True
 # ALLOWED_HOSTS = ['recismart-pre-production.up.railway.app']
 
 # LOCAL
-ALLOWED_HOSTS = ['recismart-pre-production.up.railway.app']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -78,7 +78,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Recismart.wsgi.application'
+#  EN RAILWAY
+
+# WSGI_APPLICATION = 'Recismart.wsgi.application'
 
 # BASE DE DATOS AZURE MYSQL
 

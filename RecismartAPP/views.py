@@ -17,6 +17,10 @@ def test(request):
     return render(request, './navbar2.html')
 
 
+def tiporegistro(request):
+    return render(request, './sitio/tiporegistro.html')
+
+
 
 #CLIENTES
 
