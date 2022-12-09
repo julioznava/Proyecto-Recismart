@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +41,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,12 +50,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'RecismartAPP',
     'crispy_forms',
-    # 'cloudinary_storage',
-    # 'django.contrib.staticfiles',
-    # 'cloudinary',
+    'colorfield',
+    'cloudinary_storage',
+    'cloudinary',
 
 ]
-
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
@@ -149,20 +151,26 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-import os
+# import os
 
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
+#
+# MEDIA_ROOT = os.path.join(BASE_DIR, "/media")
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'dwks69ifj',
-#     'API_KEY': '224344749295745',
-#     'API_SECRET': 'oC7ytqku4GWOgyHqH3nT6NfoKJs'
-# }
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CSRF_TRUSTED_ORIGINS = ['https://recismart-pre-production-8366.up.railway.app']
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dwks69ifj',
+    'API_KEY': '224344749295745',
+    'API_SECRET': 'oC7ytqku4GWOgyHqH3nT6NfoKJs'
+
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

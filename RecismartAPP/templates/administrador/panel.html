@@ -1,5 +1,5 @@
 {%  include 'navbar2.html' %}
-
+    {% load static %}
     <br>
     <div class="row text-center">
             <div class="col-md-6 " >
@@ -85,6 +85,7 @@
                             <th>Descripcion</th>
                             <th>Comuna</th>
                             <th>Region</th>
+                            <th>Imagen</th>
                         </tr>
                             {% for avisos in listaraviso %}
                         <tr>
@@ -92,8 +93,9 @@
                             <td>{{ avisos.Descripcion }}</td>
                             <td>{{ avisos.Comuna }}</td>
                             <td>{{ avisos.Region }}</td>
+                            <td><img src="{{ avisos.image.url }}"></td>
                             <td><a class="btn btn-success" href="#">Habilitar</a></td>
-                            <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
+                            <td><a  class="btn btn-danger" href="{% url 'eliminaraviso' avisos.id %}">Deshabilitar</a></td>
                         </tr>
                             {% endfor %}
                     </table>

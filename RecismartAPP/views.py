@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from.forms import *
 from django.db.models import Q
@@ -116,4 +116,9 @@ def registroaviso(request):
             data['form'] = formulario
     return render(request, './publicaciones/registro.html', data)
 
+
+def eliminaraviso(request, id):
+    eliminaravisos = get_object_or_404(RegistroAviso, id=id)
+    eliminaravisos.delete()
+    return redirect(to="panel")
 

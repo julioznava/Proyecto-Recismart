@@ -20,10 +20,9 @@ urlpatterns = [
 
     #ADMINISTRADOR
     path('panel/', panel, name="panel"),
-
+    path('eliminaraviso/<id>/', eliminaraviso, name='eliminaraviso'),
 
     #PUBLICACION
     path('registroaviso/', registroaviso, name="registroaviso"),
-
 
 ]
