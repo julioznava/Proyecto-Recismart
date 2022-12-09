@@ -11,3 +11,4 @@ setuptools
 sqlparse
 tzdata
 wheel
+whitenoise

@@ -25,15 +25,15 @@ SECRET_KEY = 'django-insecure-0*w53))2l=nn0oi7x((3!yq1d2lxlr5#!mm03-ys7$r8ua_$x7
 
 # EN AMBIENTE PRODUCTIVO
 
-# DEBUG = False
-DEBUG = True
+DEBUG = False
+# DEBUG = True
 
 #  EN RAILWAY
 
-# ALLOWED_HOSTS = ['recismart-pre-production.up.railway.app']
+ALLOWED_HOSTS = ['recismart-pre-production.up.railway.app']
 
 # LOCAL
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'RecismartAPP',
     'crispy_forms',
+    'whitenoise.runserver_nostatic',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -58,6 +59,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Recismart.urls'
@@ -80,31 +83,31 @@ TEMPLATES = [
 
 #  EN RAILWAY
 
-# WSGI_APPLICATION = 'Recismart.wsgi.application'
+WSGI_APPLICATION = 'Recismart.wsgi.application'
 
 # BASE DE DATOS AZURE MYSQL
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'RECISMARTBD',
-#         'USER': 'recismart',
-#         'PASSWORD': 'sqlserver.2022',
-#         'HOST': 'mysqlrecismart.mysql.database.azure.com',
-#         'PORT': '3306',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'RECISMARTBD',
+        'USER': 'recismart',
+        'PASSWORD': 'sqlserver.2022',
+        'HOST': 'mysqlrecismart.mysql.database.azure.com',
+        'PORT': '3306',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -146,8 +149,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+import os
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# CSRF_TRUSTED_ORIGINS = ['https://recismart-pre-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://recismart-pre-production.up.railway.app']
