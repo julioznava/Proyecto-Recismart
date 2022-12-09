@@ -89,8 +89,6 @@ WSGI_APPLICATION = 'Recismart.wsgi.application'
 
 # BASE DE DATOS AZURE MYSQL
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -102,9 +100,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
-
-
 
 # DATABASES = {
 #     'default': {
