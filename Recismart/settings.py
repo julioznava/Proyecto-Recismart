@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'RecismartAPP',
     'crispy_forms',
-    'whitenoise.runserver_nostatic',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -102,6 +104,8 @@ DATABASES = {
 }
 
 
+
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -154,7 +158,12 @@ import os
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dwks69ifj',
+    'API_KEY': '224344749295745',
+    'API_SECRET': 'oC7ytqku4GWOgyHqH3nT6NfoKJs'
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
