@@ -46,10 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'RecismartAPP',
     'crispy_forms',
-    'cloudinary_storage',
-    'django.contrib.staticfiles',
-    'cloudinary',
-    'django.contrib.foo',
+    # 'cloudinary_storage',
+    # 'django.contrib.staticfiles',
+    # 'cloudinary',
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -153,11 +153,11 @@ STATIC_URL = 'static/'
 #
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dwks69ifj',
-    'API_KEY': '224344749295745',
-    'API_SECRET': 'oC7ytqku4GWOgyHqH3nT6NfoKJs'
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dwks69ifj',
+#     'API_KEY': '224344749295745',
+#     'API_SECRET': 'oC7ytqku4GWOgyHqH3nT6NfoKJs'
+# }
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
