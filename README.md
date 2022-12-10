@@ -48,7 +48,7 @@ Projecto Recismart pre-entrega  14-12-2022
     python manage.py runserver
 
 
-<h4>Si desea ejecutar la aplicacion en algun IDE o editor de texto, debe realizar lo mismo._ </h4>
+<h4>Si desea ejecutar la aplicacion en algun IDE o editor de texto, debe realizar lo mismo. </h4>
 
 
 <h3>Vistas URL</h3>
