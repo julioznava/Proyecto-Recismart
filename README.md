@@ -2,7 +2,7 @@
 Projecto Recismart pre-entrega  14-12-2022
 
 
-\
+
 <h1>Instrucciones para la ejecucion del programa</h1>
 <h3>Cuentas de login: </h3>
 
