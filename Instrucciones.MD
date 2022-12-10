@@ -48,14 +48,35 @@
 
 <h4>VISTAS URL</h4>
 
+    http://127.0.0.1:8000/home
+    \
+    http://127.0.0.1:8000/maspublicaciones
+    \
+    http://127.0.0.1:8000/accounts/login
+    \
+    http://127.0.0.1:8000/panel
+    \
+    http://127.0.0.1:8000/registro
+    \
+    http://127.0.0.1:8000/registrorecolector
+    \
+    http://127.0.0.1:8000/registroaviso
+    
+
+
+<h3>Vistas URL</h3>
+
+
 http://127.0.0.1:8000/home
-\
-http://127.0.0.1:8000/accounts/login/
-\
+
+http://127.0.0.1:8000/maspublicaciones
+     
+http://127.0.0.1:8000/accounts/login
+     
 http://127.0.0.1:8000/panel
-\
+     
 http://127.0.0.1:8000/registro
-\
+     
 http://127.0.0.1:8000/registrorecolector
-\
+     
 http://127.0.0.1:8000/registroaviso
