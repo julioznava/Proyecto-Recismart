@@ -1,5 +1,5 @@
 # Recismart-pre
-Projecto Recismart pre-entrega test1
+Projecto Recismart pre-entrega  14-12-2022
 
 
 <h2>Instrucciones para la ejecucion del programa</h2>
