@@ -51,7 +51,7 @@ Projecto Recismart pre-entrega  14-12-2022
 <h4>Si desea ejecutar la aplicacion en algun IDE o editor de texto, debe realizar lo mismo. </h4>
 
 
-<h3>Vistas URL</h3>
+<h3>Vistas URL (aun en desarrollo)</h3>
 
 
 http://127.0.0.1:8000/home
