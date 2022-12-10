@@ -1,16 +1,52 @@
 {%  include 'navbar2.html' %}
-    {% load static %}
-    <br>
-    <div class="row text-center">
-            <div class="col-md-6 " >
-                <h5>LISTADO DE RECOLECTORES REGISTRADOS</h5>
-                <hr>
-                <div class="card card-body">
+   {% load static %}
+<br>
+<br>
+    <!-- ALERTAS DASHBOARD -->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-4">
+                <div class="card card-body alert alert-success shadow" role="alert" style="border: none">
+                    <h4>Recolectores registrados</h4>
+                    <p style="font-size: 80px">2</p>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card card-body alert alert-dark shadow" role="alert" style="border: none">
+                    <h4>Usuarios registrados</h4>
+                    <p style="font-size: 80px">2</p>
+
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card card-body alert alert-danger shadow" role="alert" style="border: none">
+                    <h4>Publicaciones registradas</h4>
+                    <p style="font-size: 80px">2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN ALERTAS DASHBOARD -->
+
+<br>
+<br>
+<br>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <div class="card card-body shadow">
+                    <h5>LISTADO DE RECOLECTORES REGISTRADOS</h5>
                     <br>
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-" type="search" placeholder="Buscar por Rut, Nombre, Apellido..." aria-label="Search" name="busqueda_recolector">
-                    </form>
-                    <br>
+                    <div class="row text-center">
+                        <div class="col">
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-" type="search" placeholder="Buscar por Titulo o Descripcion..." aria-label="Search" name="busqueda_aviso">
+                            </form>
+                        </div>
+                    </div>
+                    <!--TABLA RECOLECTORES REGISTRADOS -->
                     <table class="table table-responsive-md thead-light text-center" >
                         <tr>
                             <th>Rut</th>
@@ -31,55 +67,73 @@
                         </tr>
                             {% endfor %}
                     </table>
+                    <!--FIN TABLA RECOLECTORES REGISTRADOS -->
                 </div>
             </div>
 
-        <div class="col-sm-12 col-md-6 text-center">
-            <h5>LISTADO DE USUARIOS REGISTRADOS</h5>
-            <hr>
-            <div class="card card-body">
-                <br>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-" type="search" placeholder="Buscar por Rut, Nombre, Apellido..." aria-label="Search" name="busqueda_usuario">
-                </form>
-                <br>
-                <table class="table table-sm">
-                    <tr>
-                        <th>Rut</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Correo_electronico</th>
-                        <th>Comuna</th>
-                    </tr>
-                    {% for usuarios in listarusuario %}
+
+        </div>
+    </div>
+<br>
+<br>
+
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <div class="card card-body shadow">
+                    <h5>LISTADO DE USUARIOS REGISTRADOS</h5>
+                    <br>
+                    <div class="row text-center">
+                        <div class="col">
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-" type="search" placeholder="Buscar por Titulo o Descripcion..." aria-label="Search" name="busqueda_aviso">
+                            </form>
+                        </div>
+                    </div>
+                    <!--TABLA RECOLECTORES REGISTRADOS -->
+                    <table class="table table-sm">
                         <tr>
-                        <td>{{ usuarios.Rut }}</td>
-                        <td>{{ usuarios.Nombre }}</td>
-                        <td>{{ usuarios.Apellido }}</td>
-                        <td>{{ usuarios.Correo_electronico }}</td>
-                        <td>{{ usuarios.Comuna }}</td>
-                        <td><a class="btn btn-success" href="#">Habilitar</a></td>
-                        <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
+                            <th>Rut</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo_electronico</th>
+                            <th>Comuna</th>
                         </tr>
-                    {% endfor %}
-                </table>
+                            {% for usuarios in listarusuario %}
+                        <tr>
+                            <td>{{ usuarios.Rut }}</td>
+                            <td>{{ usuarios.Nombre }}</td>
+                            <td>{{ usuarios.Apellido }}</td>
+                            <td>{{ usuarios.Correo_electronico }}</td>
+                            <td>{{ usuarios.Comuna }}</td>
+                            <td><a class="btn btn-success" href="#">Habilitar</a></td>
+                            <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                <!--FIN TABLA RECOLECTORES REGISTRADOS -->
+                </div>
             </div>
         </div>
+    </div>
 
+<br>
+<br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card card-body shadow">
+                    <h5 style="text-align: center">HISTORICO DE PUBLICACIONES</h5>
+                    <br>
+                    <div class="row text-center">
+                        <div class="col">
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-" type="search" placeholder="Buscar por Titulo o Descripcion..." aria-label="Search" name="busqueda_aviso">
+                            </form>
+                        </div>
+                    </div>
 
-        <div class="col-md-12" >
-                <br>
-                <br>
-                <br>
-                <h5 style="text-align: center">HISTORICO DE PUBLICACIONES</h5>
-                <hr>
-                <div class="card card-body">
-                    <br>
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-" type="search" placeholder="Buscar por Titulo o Descripcion..." aria-label="Search" name="busqueda_aviso">
-                    </form>
-                    <br>
-                    <table class="table table-responsive-md thead-light text-center" >
+                    <table class="table table-responsive-md thead-light text-center">
                         <tr>
                             <th>Titulo publicacion</th>
                             <th>Descripcion</th>
@@ -93,12 +147,16 @@
                             <td>{{ avisos.Descripcion }}</td>
                             <td>{{ avisos.Comuna }}</td>
                             <td>{{ avisos.Region }}</td>
-                            <td><img src="{{ avisos.image.url }}"></td>
                             <td><a class="btn btn-success" href="#">Habilitar</a></td>
                             <td><a  class="btn btn-danger" href="{% url 'eliminaraviso' avisos.id %}">Deshabilitar</a></td>
                         </tr>
                             {% endfor %}
                     </table>
                 </div>
+            </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>

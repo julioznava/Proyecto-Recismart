@@ -14,13 +14,15 @@ def login(request):
 
 
 def test(request):
-    return render(request, './navbar2.html')
+    return render(request, './test.html')
 
 
 def tiporegistro(request):
     return render(request, './sitio/tiporegistro.html')
 
 
+def maspublicaciones(request):
+    return render(request, './sitio/maspublicaciones.html')
 
 #CLIENTES
 
@@ -44,7 +46,6 @@ def panel(request):
     busqueda_recolector = request.GET.get("busqueda_recolector")
     busqueda_aviso = request.GET.get("busqueda_aviso")
 
-    fotos = ImageAviso.objects.all()
     listarusuario = CuentaUsuario.objects.all()
     listarrecolector = CuentaRecolector.objects.all()
     listaraviso = RegistroAviso.objects.all()
@@ -77,7 +78,7 @@ def panel(request):
         'listarusuario': listarusuario,
         'listarrecolector': listarrecolector,
         'listaraviso': listaraviso,
-        'fotos': fotos,
+
     }
     return render(request, './administrador/panel.html', data)
 
