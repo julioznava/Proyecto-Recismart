@@ -4,14 +4,6 @@ from .forms import RegistroAvisoForm
 
 # Register your models here.
 
-class ImageAvisoAdmin(admin.TabularInline):
-    model = ImageAviso
-class AvisosAdmin(admin.ModelAdmin):
-    form = RegistroAvisoForm
-    inlines = [
-        ImageAvisoAdmin
-    ]
-
 
 admin.site.register(CuentaUsuario)
 admin.site.register(CuentaRecolector)

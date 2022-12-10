@@ -2,6 +2,7 @@ from django import forms
 from .models import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from cloudinary.forms import cl_init_js_callbacks
 
 
 class CuentaUsuarioForm(forms.ModelForm):
@@ -21,6 +22,9 @@ class RegistroAvisoForm(forms.ModelForm):
     class Meta:
         model = RegistroAviso
         fields = '__all__'
+
+
+
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta:

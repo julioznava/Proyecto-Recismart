@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -108,12 +109,12 @@ class RegistroAviso(models.Model):
     Descripcion = models.CharField(max_length=300)
     Comuna = models.ForeignKey(Comunas, on_delete=models.CASCADE)
     Region = models.ForeignKey(Regiones, on_delete=models.CASCADE)
-    Imagen = models.ImageField(upload_to="publicacion", null=True)
+    imagen = CloudinaryField('imagen')
 
     def __str__(self):
         return self.Titulo_de_publicacion
 
 
-class ImageAviso(models.Model):
-    image = models.ImageField(upload_to="publicacion")
-    aviso = models.ForeignKey(RegistroAviso, on_delete=models.CASCADE)
+# class ImageAviso(models.Model):
+#     image = CloudinaryField('image')
+#     aviso = models.ForeignKey(RegistroAviso, on_delete=models.CASCADE)

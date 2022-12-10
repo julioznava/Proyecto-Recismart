@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import cloudinary_storage
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,11 +53,10 @@ INSTALLED_APPS = [
     'RecismartAPP',
     'crispy_forms',
     'colorfield',
-    'cloudinary_storage',
     'cloudinary',
 
 ]
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
@@ -166,11 +167,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CSRF_TRUSTED_ORIGINS = ['https://recismart-pre-production-8366.up.railway.app']
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dwks69ifj',
-    'API_KEY': '224344749295745',
-    'API_SECRET': 'oC7ytqku4GWOgyHqH3nT6NfoKJs'
+cloudinary.config(
+  cloud_name = "dwks69ifj",
+  api_key = "224344749295745",
+  api_secret = "oC7ytqku4GWOgyHqH3nT6NfoKJs",
+  # secure = True
+)
 
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

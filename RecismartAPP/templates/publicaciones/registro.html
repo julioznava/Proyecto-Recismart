@@ -1,23 +1,76 @@
 {% include 'navbar2.html' %}
 {% load crispy_forms_tags %}
 
-
-<div class="row py-4">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <form action="" method="post" autocomplete="on">
-                            {% csrf_token %}
-                            {{ form | crispy }}
-                            <br>
-                            <div class="d-flex justify-content-end">
-                                <input type="reset" value="cancelar" class="btn btn-secondary">
-                                &nbsp;
-                                <button class="btn btn-success" type="submit" id="btnenviar">Enviar</button>
-                            </div>
-                        </form>
-                        {{ mensaje }}
-                </div>
-            </div>
+<br>
+<br>
+<br>
+    <div class="container">
+        <div class="row col-sm-4 col-md-12 col-lg-12">
+            <h5 class="justify-content-center display-6 py-md-4 shadow bg-primary text-center" style="color: white; border-radius: 10px">Publicar Aviso</h5>
         </div>
     </div>
+    <br>
+    <div class="container col-sm-3 col-md-8 col-lg-12">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <form action="" method="post" autocomplete="on">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        {{ fotos | crispy }}
+                        <br>
+                        <div class="d-flex justify-content-end">
+                            <input type="reset" value="cancelar" class="btn btn-secondary">
+                                    &nbsp;
+                            <button class="btn btn-success" type="submit" id="btnenviar">Enviar</button>
+                        </div>
+                    </form>
+                    {{ mensaje }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <h3 class="text-center">Publicacion</h3>
+                    <br>
+                    <br>
+                    <h5>Titulo de publicacion:</h5>
+                    <h5>Titulo de publicacion:</h5>
+                    <h5>Descripcion:</h5>
+                    <h5>Region:</h5>
+                    <h5>Comuna:</h5>
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="card card-body">
+                    <h3 class="text-center">FOTOS</h3>
+                    <br>
+                    <br>
+
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

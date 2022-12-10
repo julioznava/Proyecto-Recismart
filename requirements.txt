@@ -11,5 +11,4 @@ setuptools
 sqlparse
 tzdata
 wheel
-django-cloudinary-storage
-django-admin-interface
+cloudinary
