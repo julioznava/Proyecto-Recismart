@@ -51,18 +51,19 @@ Projecto Recismart pre-entrega  14-12-2022
 <h4>Si desea ejecutar la aplicacion en algun IDE o editor de texto, debe realizar lo mismo._ </h4>
 
 
-<h4>VISTAS URL</h4>
+<h3>Vistas URL</h3>
 
-     http://127.0.0.1:8000/home
+
+http://127.0.0.1:8000/home
+
+http://127.0.0.1:8000/maspublicaciones
      
-     http://127.0.0.1:8000/maspublicaciones
+http://127.0.0.1:8000/accounts/login
      
-     http://127.0.0.1:8000/accounts/login
+http://127.0.0.1:8000/panel
      
-     http://127.0.0.1:8000/panel
+http://127.0.0.1:8000/registro
      
-     http://127.0.0.1:8000/registro
+http://127.0.0.1:8000/registrorecolector
      
-     http://127.0.0.1:8000/registrorecolector
-     
-     http://127.0.0.1:8000/registroaviso
+http://127.0.0.1:8000/registroaviso
