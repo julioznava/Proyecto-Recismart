@@ -16,7 +16,7 @@ Projecto Recismart pre-entrega  14-12-2022
 
 **pip install virtualenv env**
 
-![img.png](img.png)
+
 
 4. digitar para abrir entorno virtual enviroment
 
