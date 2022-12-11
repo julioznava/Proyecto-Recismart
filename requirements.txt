@@ -1,6 +1,7 @@
 pillow
 django-admin-interface
 django-crispy-forms
+crispy-bootstrap5
 psycopg2
 mysqlclient
 asgiref

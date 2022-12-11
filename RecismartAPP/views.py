@@ -3,6 +3,7 @@ from .models import *
 from.forms import *
 from django.db.models import Q
 from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
 
 
 
@@ -29,13 +30,15 @@ def maspublicaciones(request):
 
 def registro(request):
     data = {
-        'form': CuentaUsuarioForm()
+        'form': RegistroForm()
     }
     if request.method == 'POST':
-        formulario = CuentaUsuarioForm(data=request.POST)
+        formulario = RegistroForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
+            login(request)
             data['mensaje'] = "SE HA REGISTRADO EXITOSAMENTE."
+            return redirect(to='home')
         else:
             data['form'] = formulario
     return render(request, './clientes/registro.html', data)

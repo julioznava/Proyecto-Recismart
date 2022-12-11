@@ -52,12 +52,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'RecismartAPP',
     'crispy_forms',
+    'crispy_bootstrap5',
     'colorfield',
     'cloudinary',
 
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -173,4 +175,10 @@ cloudinary.config(
   api_secret = "oC7ytqku4GWOgyHqH3nT6NfoKJs",
   # secure = True
 )
+
+
+# CSRF_TRUSTED_ORIGINS = ['https://recismart-pre-production-8366.up.railway.app']
+
+LOGIN_REDIRECT_URL = '/home'
+LOGOUT_REDIRECT_URL = '/login'
 
