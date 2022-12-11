@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
@@ -77,31 +78,23 @@ class Regiones(models.Model):
     def __str__(self):
         return self.Region
 
-class CuentaUsuario(models.Model):
+
+class CuentaUsuario(AbstractUser):
     Rut = models.CharField(max_length=100, unique=True)
+    Rut_Empresa = models.CharField(max_length=100, unique=True, null=True, blank=True)
+    Nombre_de_empresa = models.CharField(max_length=100, unique=True, null=True, blank=True)
     Nombre = models.CharField(max_length=50)
     Apellido = models.CharField(max_length=50)
-    Correo_electronico = models.EmailField(max_length=50, unique=True)
     Telefono = models.CharField(max_length=100)
     Direccion = models.CharField(max_length=100)
     Comuna = models.ForeignKey(Comunas, on_delete=models.CASCADE)
     Region = models.ForeignKey(Regiones, on_delete=models.CASCADE)
+    Usuario_administrador = models.BooleanField(default=False)
+    Usuario_normal = models.BooleanField(default=False)
+    Usuario_recolector = models.BooleanField(default=False)
 
     def __str__(self):
         return self.Rut
-
-
-class CuentaRecolector(models.Model):
-    Rut_Empresa = models.CharField(max_length=100, unique=True)
-    Nombre = models.CharField(max_length=50)
-    Apellido = models.CharField(max_length=50)
-    Correo_electronico = models.EmailField(max_length=50, unique=True)
-    Telefono = models.CharField(max_length=100)
-    Direccion = models.CharField(max_length=100)
-    Nombre_de_empresa = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.Nombre_de_empresa
 
 
 class RegistroAviso(models.Model):

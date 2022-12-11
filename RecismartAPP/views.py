@@ -30,10 +30,10 @@ def maspublicaciones(request):
 
 def registro(request):
     data = {
-        'form': CuentaUsuarioForm()
+        'form': CuentaUsuarioCreationForm()
     }
     if request.method == 'POST':
-        formulario = CuentaUsuarioForm(data=request.POST)
+        formulario = CuentaUsuarioCreationForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
             data['mensaje'] = "SE HA REGISTRADO EXITOSAMENTE."
@@ -89,41 +89,38 @@ def panel(request):
     return render(request, './administrador/panel.html', data)
 
 
-
-def crearcuenta(request):
-    data = {
-        'form': RegistroForm()
-    }
-    if request.method == 'POST':
-        formulario = RegistroForm(data=request.POST)
-        if formulario.is_valid():
-            formulario.save()
-            login(request)
-            data['mensaje'] = "SE HA ACTIVADO EXITOSAMENTE."
-            return redirect(to='panel')
-        else:
-            data['form'] = formulario
-    return render(request, './administrador/crearcuenta.html', data)
-
-
-def habilitar(request, id):
-    habilitar_usuario = get_object_or_404(CuentaUsuario, id=id)
-
-    data = {
-        'form': CuentaUsuarioForm(instance=habilitar_usuario)
-    }
-    if request.method == 'POST':
-        formulario = CuentaUsuarioForm(data=request.POST, instance=habilitar_usuario)
-        if formulario.is_valid():
-            formulario.save()
-            habilitar_usuario.delete()
-            data['mensaje'] = 'EL USUARIO SE HA MODIFICADO EXITOSAMENTE.'
+# def crearcuenta(request):
+#     data = {
+#         'form': CuentaUsuarioCreationForm()
+#     }
+#     if request.method == 'POST':
+#         formulario = CuentaUsuarioCreationForm(data=request.POST)
+#         if formulario.is_valid():
+#             formulario.save()
+#             login(request)
+#             data['mensaje'] = "SE HA ACTIVADO EXITOSAMENTE."
+#             return redirect(to='panel')
+#         else:
+#             data['form'] = formulario
+#     return render(request, './administrador/crearcuenta.html', data)
 
 
-        return redirect(to="panel")
-        data["form"] = formulario
-
-    return render(request, './administrador/crearcuenta.html', data)
+# def habilitar(request, id):
+#     habilitar_usuario = get_object_or_404(CuentaUsuario, id=id)
+#
+#     data = {
+#         'form': CuentaUsuarioForm(instance=habilitar_usuario)
+#     }
+#     if request.method == 'POST':
+#         formulario = CuentaUsuarioForm(data=request.POST, instance=habilitar_usuario)
+#         if formulario.is_valid():
+#             formulario.save()
+#             data['mensaje'] = 'EL USUARIO SE HA MODIFICADO EXITOSAMENTE.'
+#
+#         return redirect(to="panel")
+#         data["form"] = formulario
+#
+#     return render(request, './administrador/crearcuenta.html', data)
 
 #RECOLECTORES
 

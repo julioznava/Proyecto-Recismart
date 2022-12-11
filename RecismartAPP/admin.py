@@ -6,7 +6,6 @@ from .forms import RegistroAvisoForm
 
 
 admin.site.register(CuentaUsuario)
-admin.site.register(CuentaRecolector)
 admin.site.register(Regiones)
 admin.site.register(Comunas)
 admin.site.register(RegistroAviso)
