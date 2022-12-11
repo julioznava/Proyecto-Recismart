@@ -35,7 +35,8 @@ DEBUG = True
 # DEBUG = False
 
 # ALLOWED_HOSTS = ['recismart-pre-production-8366.up.railway.app']
-
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login'
 
 # LOCAL
 ALLOWED_HOSTS = []
@@ -96,23 +97,23 @@ WSGI_APPLICATION = 'Recismart.wsgi.application'
 # BASE DE DATOS AZURE MYSQL
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'RECISMARTBD',
-#         'USER': 'recismart',
-#         'PASSWORD': 'sqlserver.2022',
-#         'HOST': 'mysqlrecismart.mysql.database.azure.com',
-#         'PORT': '3306',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'RECISMARTBD2',
+        'USER': 'recismart',
+        'PASSWORD': 'sqlserver.2022',
+        'HOST': 'mysqlrecismart.mysql.database.azure.com',
+        'PORT': '3306',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -137,10 +138,10 @@ AUTH_USER_MODEL = 'RecismartAPP.CuentaUsuario'
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-# LANGUAGE_CODE = 'es-es'
-# TIME_ZONE = 'America/Santiago'
+# LANGUAGE_CODE = 'en-us'
+# TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'es-es'
+TIME_ZONE = 'America/Santiago'
 
 
 USE_I18N = True
@@ -178,6 +179,5 @@ cloudinary.config(
 
 # CSRF_TRUSTED_ORIGINS = ['https://recismart-pre-production-8366.up.railway.app']
 
-LOGIN_REDIRECT_URL = '/home'
-LOGOUT_REDIRECT_URL = '/login'
+
 

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from cloudinary.models import CloudinaryField
+from django.utils import timezone
 
 # Create your models here.
 
@@ -64,34 +65,28 @@ LISTA_COMUNAS_RM = [
     ['Peñaflor','Peñaflor'],
 
 ]
+TIPO_USUARIO = [
+    ['Administrador', 'Administrador'],
+    ['Usuario', 'Usuario'],
+    ['Recolector', 'Recolector'],
+    ['Invitado', 'Invitado'],
 
-class Comunas(models.Model):
-    Comuna = models.CharField(max_length=100, choices=LISTA_COMUNAS_RM)
-
-    def __str__(self):
-        return self.Comuna
-
-
-class Regiones(models.Model):
-    Region = models.CharField(max_length=100, choices=LISTA_REGIONES)
-
-    def __str__(self):
-        return self.Region
+]
 
 
 class CuentaUsuario(AbstractUser):
+    Perfil_usuario = models.CharField(max_length=100, choices=TIPO_USUARIO, default='Usuario')
     Rut = models.CharField(max_length=100, unique=True)
     Rut_Empresa = models.CharField(max_length=100, unique=True, null=True, blank=True)
     Nombre_de_empresa = models.CharField(max_length=100, unique=True, null=True, blank=True)
     Nombre = models.CharField(max_length=50)
     Apellido = models.CharField(max_length=50)
     Telefono = models.CharField(max_length=100)
+    Correo = models.EmailField(max_length=100, unique=True)
     Direccion = models.CharField(max_length=100)
-    Comuna = models.ForeignKey(Comunas, on_delete=models.CASCADE)
-    Region = models.ForeignKey(Regiones, on_delete=models.CASCADE)
-    Usuario_administrador = models.BooleanField(default=False)
-    Usuario_normal = models.BooleanField(default=False)
-    Usuario_recolector = models.BooleanField(default=False)
+    Comuna = models.CharField(max_length=100, choices=LISTA_COMUNAS_RM)
+    Region = models.CharField(max_length=100, choices=LISTA_REGIONES)
+
 
     def __str__(self):
         return self.Rut
@@ -100,9 +95,10 @@ class CuentaUsuario(AbstractUser):
 class RegistroAviso(models.Model):
     Titulo_de_publicacion = models.CharField(max_length=100, unique=True)
     Descripcion = models.TextField(max_length=500)
-    Comuna = models.ForeignKey(Comunas, on_delete=models.CASCADE)
-    Region = models.ForeignKey(Regiones, on_delete=models.CASCADE)
-    imagen = CloudinaryField('imagen')
+    Comuna = models.CharField(max_length=100, choices=LISTA_COMUNAS_RM, blank=True, null=True)
+    Region = models.CharField(max_length=100, choices=LISTA_REGIONES, blank=True, null=True)
+    Fecha_publicacion = models.DateTimeField(default=timezone.now())
+    # imagen = CloudinaryField('imagen')
 
     def __str__(self):
         return self.Titulo_de_publicacion

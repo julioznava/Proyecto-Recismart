@@ -7,23 +7,21 @@ urlpatterns = [
     path('', home, name="home"),
     path('login/', login, name="login"),
     path('test/', test, name="test"),
-    path('tiporegistro/', tiporegistro, name="tiporegistro"),
     path('maspublicaciones/', maspublicaciones, name="maspublicaciones"),
 
 
-    # CLIENTES
+    # REGISTROS
 
     path('registro/', registro, name="registro"),
+    path('modificarusuario/<id>/', modificarusuario, name="modificarusuario"),
 
-    # RECOLECTOR
 
-    path('registrorecolector/', registrorecolector, name="registrorecolector"),
+
+
 
     #ADMINISTRADOR
     path('panel/', panel, name="panel"),
-    # path('crearcuenta/', crearcuenta, name="crearcuenta"),
     path('eliminaraviso/<id>/', eliminaraviso, name='eliminaraviso'),
-    # path('habilitar/<id>/', habilitar, name='habilitar'),
 
 
     #PUBLICACION

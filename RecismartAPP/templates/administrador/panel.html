@@ -33,47 +33,47 @@
 <br>
 <br>
 <br>
-    <div class="container">
-        <div class="row text-center">
-            <div class="col">
-                <div class="card card-body shadow">
-                    <h5>LISTADO DE RECOLECTORES REGISTRADOS</h5>
-                    <br>
-                    <div class="row text-center">
-                        <div class="col">
-                            <form class="form-inline">
-                                <input class="form-control mr-sm-" type="search" placeholder="Buscar por Titulo o Descripcion..." aria-label="Search" name="busqueda_aviso">
-                            </form>
-                        </div>
-                    </div>
-                    <!--TABLA RECOLECTORES REGISTRADOS -->
-                    <table class="table table-responsive-md thead-light text-center" >
-                        <tr>
-                            <th>Rut</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Telefono</th>
-                            <th>Nombre empresa</th>
-                        </tr>
-                            {% for recolector in listarrecolector %}
-                        <tr>
-                            <td>{{ recolector.Rut_Empresa }}</td>
-                            <td>{{ recolector.Nombre }}</td>
-                            <td>{{ recolector.Apellido }}</td>
-                            <td>{{ recolector.Telefono }}</td>
-                            <td>{{ recolector.Nombre_de_empresa }}</td>
-                            <td><a class="btn btn-success" href="#">Habilitar</a></td>
-                            <td><a class="btn btn-danger" href="#">Deshabilitar</a></td>
-                        </tr>
-                            {% endfor %}
-                    </table>
-                    <!--FIN TABLA RECOLECTORES REGISTRADOS -->
-                </div>
-            </div>
-
-
-        </div>
-    </div>
+{#    <div class="container">#}
+{#        <div class="row text-center">#}
+{#            <div class="col">#}
+{#                <div class="card card-body shadow">#}
+{#                    <h5>LISTADO DE RECOLECTORES REGISTRADOS</h5>#}
+{#                    <br>#}
+{#                    <div class="row text-center">#}
+{#                        <div class="col">#}
+{#                            <form class="form-inline">#}
+{#                                <input class="form-control mr-sm-" type="search" placeholder="Buscar por Titulo o Descripcion..." aria-label="Search" name="busqueda_aviso">#}
+{#                            </form>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <!--TABLA RECOLECTORES REGISTRADOS -->#}
+{#                    <table class="table table-responsive-md thead-light text-center" >#}
+{#                        <tr>#}
+{#                            <th>Rut</th>#}
+{#                            <th>Nombre</th>#}
+{#                            <th>Apellido</th>#}
+{#                            <th>Telefono</th>#}
+{#                            <th>Nombre empresa</th>#}
+{#                        </tr>#}
+{#                            {% for recolector in listarrecolector %}#}
+{#                        <tr>#}
+{#                            <td>{{ recolector.Rut_Empresa }}</td>#}
+{#                            <td>{{ recolector.Nombre }}</td>#}
+{#                            <td>{{ recolector.Apellido }}</td>#}
+{#                            <td>{{ recolector.Telefono }}</td>#}
+{#                            <td>{{ recolector.Nombre_de_empresa }}</td>#}
+{#                            <td><a class="btn btn-success" href="#">Habilitar</a></td>#}
+{#                            <td><a class="btn btn-danger" href="#">Deshabilitar</a></td>#}
+{#                        </tr>#}
+{#                            {% endfor %}#}
+{#                    </table>#}
+{#                    <!--FIN TABLA RECOLECTORES REGISTRADOS -->#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{##}
+{#        </div>#}
+{#    </div>#}
 <br>
 <br>
 
@@ -83,30 +83,36 @@
                 <div class="card card-body shadow">
                     <h5>LISTADO DE USUARIOS REGISTRADOS</h5>
                     <br>
-                    <div class="row text-center">
+                    <div class="row">
                         <div class="col">
                             <form class="form-inline">
-                                <input class="form-control mr-sm-" type="search" placeholder="Buscar por Titulo o Descripcion..." aria-label="Search" name="busqueda_aviso">
+                                <input class="form-control mr-sm-" type="search" placeholder="Buscar por Rut, Perfil usuario, email..." aria-label="Search" name="busqueda_usuario">
                             </form>
                         </div>
                     </div>
                     <!--TABLA RECOLECTORES REGISTRADOS -->
-                    <table class="table table-sm">
+                    <table class="table table-sm text-center">
                         <tr>
                             <th>Rut</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
-                            <th>Correo_electronico</th>
+                            <th>Correo electronico</th>
                             <th>Comuna</th>
+                            <th>Perfil usuario</th>
+                            <th>Fecha de registro</th>
+
                         </tr>
                             {% for usuarios in listarusuario %}
                         <tr>
                             <td>{{ usuarios.Rut }}</td>
-                            <td>{{ usuarios.Nombre }}</td>
-                            <td>{{ usuarios.Apellido }}</td>
-                            <td>{{ usuarios.Correo_electronico }}</td>
+                            <td>{{ usuarios.first_name }}</td>
+                            <td>{{ usuarios.last_name }}</td>
+                            <td>{{ usuarios.Correo }}</td>
                             <td>{{ usuarios.Comuna }}</td>
-                            <td><a class="btn btn-success" href="{% url 'crearcuenta' %}">Habilitar</a></td>
+                            <td>{{ usuarios.Perfil_usuario }}</td>
+                            <td>{{ usuarios.date_joined }}</td>
+
+                            <td><a class="btn btn-success" href="{% url 'modificarusuario' usuarios.id %}">Habilitar</a></td>
                             <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
                         </tr>
                         {% endfor %}
@@ -135,18 +141,21 @@
 
                     <table class="table table-responsive-md thead-light text-center">
                         <tr>
-                            <th>Titulo publicacion</th>
-                            <th>Descripcion</th>
                             <th>Comuna</th>
                             <th>Region</th>
-                            <th>Imagen</th>
+                            <th>Titulo publicacion</th>
+                            <th>Descripcion</th>
+                            <th>Fecha de publicacion</th>
                         </tr>
                             {% for avisos in listaraviso %}
                         <tr>
-                            <td>{{ avisos.Titulo_de_publicacion }}</td>
-                            <td>{{ avisos.Descripcion }}</td>
                             <td>{{ avisos.Comuna }}</td>
                             <td>{{ avisos.Region }}</td>
+                            <td>{{ avisos.Titulo_de_publicacion }}</td>
+                            <td>{{ avisos.Descripcion }}</td>
+                            <td>{{ avisos.Fecha_publicacion }}</td>
+
+
                             <td><a class="btn btn-success" href="#">Habilitar</a></td>
                             <td><a  class="btn btn-danger" href="{% url 'eliminaraviso' avisos.id %}">Deshabilitar</a></td>
                         </tr>
