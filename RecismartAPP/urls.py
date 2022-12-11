@@ -23,8 +23,7 @@ urlpatterns = [
     path('panel/', panel, name="panel"),
     path('crearcuenta/', crearcuenta, name="crearcuenta"),
     path('eliminaraviso/<id>/', eliminaraviso, name='eliminaraviso'),
-
-
+    path('habilitar/<id>/', habilitar, name='habilitar'),
 
 
     #PUBLICACION

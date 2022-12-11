@@ -27,12 +27,15 @@ class RegistroAvisoForm(forms.ModelForm):
 
 
 class RegistroForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-
+    username = forms.CharField(required=True, label= 'Crear una cuenta de usuario')
+    email = forms.EmailField(required=True, label='Ingrese el mail de validacion.')
+    password1 = forms.CharField(widget=forms.PasswordInput, label='Ingrese una contraseña')
+    password2 = forms.CharField(widget=forms.PasswordInput, label='Repita la contraseña')
+    is_active = forms.BooleanField(required=True)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2','is_active']
 
 
 

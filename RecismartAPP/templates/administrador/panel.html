@@ -106,7 +106,7 @@
                             <td>{{ usuarios.Apellido }}</td>
                             <td>{{ usuarios.Correo_electronico }}</td>
                             <td>{{ usuarios.Comuna }}</td>
-                            <td><a class="btn btn-success" href="#">Habilitar</a></td>
+                            <td><a class="btn btn-success" href="{% url 'crearcuenta' %}">Habilitar</a></td>
                             <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
                         </tr>
                         {% endfor %}
