@@ -43,6 +43,24 @@ def registro(request):
             data['form'] = formulario
     return render(request, './clientes/registro.html', data)
 
+def crearcuenta(request):
+    data = {
+        'form': RegistroForm()
+    }
+    if request.method == 'POST':
+        formulario = RegistroForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            login(request)
+            data['mensaje'] = "SE HA REGISTRADO EXITOSAMENTE."
+            return redirect(to='home')
+        else:
+            data['form'] = formulario
+    return render(request, './clientes/registro.html', data)
+
+
+
+
 # ADMINISTRADOR
 def panel(request):
     busqueda_usuario = request.GET.get("busqueda_usuario")

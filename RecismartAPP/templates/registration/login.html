@@ -3,7 +3,6 @@
 {% block contenido %}
 {% load crispy_forms_tags %}
 
-
     <section class="vh-100">
       <div class="container py-5 h-100">
         <div class="row d-flex align-items-center justify-content-center h-100">
@@ -16,7 +15,7 @@
               <h2 class="text-center">Acceso usuarios</h2>
               <hr>
               <br>
-            <form class="" method="POST">
+            <form class="" method="post">
                 {% csrf_token %}
                 {{ form | crispy }}
               <div class="d-flex justify-content-around align-items-center mb-4">
