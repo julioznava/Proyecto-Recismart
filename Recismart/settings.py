@@ -36,7 +36,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['recismart-pre-production-8366.up.railway.app']
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/login'
+LOGOUT_REDIRECT_URL = '/'
 
 # LOCAL
 ALLOWED_HOSTS = []

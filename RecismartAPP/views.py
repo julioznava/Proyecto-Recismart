@@ -23,6 +23,9 @@ def test(request):
 def maspublicaciones(request):
     return render(request, './sitio/maspublicaciones.html')
 
+
+def panelayuda(request):
+    return render(request, './sitio/ayuda.html')
 #CLIENTES
 
 def registro(request):

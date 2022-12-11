@@ -8,7 +8,7 @@ urlpatterns = [
     path('login/', login, name="login"),
     path('test/', test, name="test"),
     path('maspublicaciones/', maspublicaciones, name="maspublicaciones"),
-
+    path('panelayuda/', panelayuda, name="panelayuda"),
 
     # REGISTROS
 
@@ -16,12 +16,10 @@ urlpatterns = [
     path('modificarusuario/<id>/', modificarusuario, name="modificarusuario"),
 
 
-
-
-
     #ADMINISTRADOR
     path('panel/', panel, name="panel"),
     path('eliminaraviso/<id>/', eliminaraviso, name='eliminaraviso'),
+    path('modificarusuario/<id>/', modificarusuario, name="modificarusuario"),
 
 
     #PUBLICACION
