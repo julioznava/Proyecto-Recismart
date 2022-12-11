@@ -106,7 +106,7 @@ class CuentaRecolector(models.Model):
 
 class RegistroAviso(models.Model):
     Titulo_de_publicacion = models.CharField(max_length=100, unique=True)
-    Descripcion = models.CharField(max_length=300)
+    Descripcion = models.TextField(max_length=500)
     Comuna = models.ForeignKey(Comunas, on_delete=models.CASCADE)
     Region = models.ForeignKey(Regiones, on_delete=models.CASCADE)
     imagen = CloudinaryField('imagen')

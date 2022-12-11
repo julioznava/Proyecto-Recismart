@@ -19,10 +19,12 @@ class CuentaRecolectorForm(forms.ModelForm):
         fields = '__all__'
 
 class RegistroAvisoForm(forms.ModelForm):
+    Titulo_de_publicacion = forms.CharField(max_length=100, label='Ingrese un Titulo')
+
 
     class Meta:
         model = RegistroAviso
-        fields = '__all__'
+        fields = ['Region', 'Comuna', 'Titulo_de_publicacion', 'Descripcion', 'imagen']
 
 
 
