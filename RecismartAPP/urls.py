@@ -25,10 +25,6 @@ urlpatterns = [
 
     #PUBLICACION
     path('registroaviso/', registroaviso, name="registroaviso"),
-
-
-    # TESTING
-    path('activate/<uidb64>/<token>', activate, name='activate'),
-    path('register/', register, name='register'),
 ]
+
 
