@@ -20,8 +20,11 @@
                     <form action="" method="post" autocomplete="on">
                         {% csrf_token %}
                         {{ form | crispy }}
-                        {{ fotos | crispy }}
                         <br>
+                         <div class="d-flex justify-content-lg-start">
+                             <a href="{% url 'subirfoto' %}" class="btn btn-info">Ingresar foto</a>
+                        </div>
+
                         <div class="d-flex justify-content-end">
                             <input type="reset" value="cancelar" class="btn btn-secondary">
                                                 &nbsp;
@@ -42,6 +45,25 @@
                         <h5>Comuna:</h5>
                     </div>
                 </div>
+            <br>
+            <br>
+{#                {% load cloudinary %}#}
+{#               <div class="container">#}
+{#                   <div class="row">#}
+{#                       <div class="col">#}
+{#                           <div class="card">#}
+{#                               <h2>Subir imagenes</h2>#}
+{#                               <form method="post">#}
+{#                               {% csrf_token %}#}
+{#                                   {{ form.image | crispy }}#}
+{#                                    <div>#}
+{#                                        <input type="submit" value="Upload image">#}
+{#                                    </div>#}
+{#                               </form>#}
+{#                           </div>#}
+{#                       </div>#}
+{#                   </div>#}
+{#               </div>#}
             <!-- FIN PUBLICACION PREVIEW -->
         </div>
     </div>

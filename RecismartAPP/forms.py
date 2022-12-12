@@ -70,6 +70,11 @@ TIPO_USUARIO = [
 
 ]
 
+class FotosForm(forms.ModelForm):
+
+    class Meta:
+        model = Fotos
+        fields = '__all__'
 class CuentaUsuarioCreationForm(UserCreationForm):
     # Perfil_usuario = forms.ChoiceField(choices=TIPO_USUARIO, label='Seleccione el tipo de rol para el sitio')
     Comuna = forms.ChoiceField(choices=LISTA_COMUNAS_RM, label='Seleccione la comuna')

@@ -54,8 +54,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'colorfield',
-    'cloudinary_storage',
-    'django.contrib.staticfiles',
     'cloudinary',
 
 ]
@@ -136,11 +134,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 AUTH_USER_MODEL = 'RecismartAPP.CuentaUsuario'
 
-CLOUDINARY_STORAGE = {
-'CLOUD_NAME': 'dwks69ifj',
-'API_KEY': '224344749295745',
-'API_SECRET': 'oC7ytqku4GWOgyHqH3nT6NfoKJs',
-}
+cloudinary.config(
+  cloud_name = "dwks69ifj",
+  api_key = "224344749295745",
+  api_secret = "oC7ytqku4GWOgyHqH3nT6NfoKJs",
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/

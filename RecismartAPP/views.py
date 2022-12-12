@@ -4,13 +4,19 @@ from.forms import *
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as dj_login
+from cloudinary.forms import cl_init_js_callbacks
 
 
 
 
 #SITIO
 def home(request):
-    return render(request, './sitio/home.html')
+    foto = Fotos.objects.all()
+
+    data = {
+        'foto':foto,
+    }
+    return render(request, './sitio/home.html', data)
 
 def login(request):
     return render(request, './registration/login.html')
@@ -118,7 +124,6 @@ def panel(request):
 def registroaviso(request):
     data = {
         'form': RegistroAvisoForm(),
-
     }
     if request.method == 'POST':
         formulario = RegistroAvisoForm(data=request.POST)
@@ -127,6 +132,7 @@ def registroaviso(request):
             data['mensaje'] = "SE HA REGISTRADO EXITOSAMENTE."
         else:
             data['form'] = formulario
+
     return render(request, './publicaciones/registro.html', data)
 
 
@@ -139,8 +145,16 @@ def eliminaraviso(request, id):
 
 
 
+def subirfoto(request):
+    context = dict(backend_form=FotosForm())
 
+    if request.method == 'POST':
+        form = FotosForm(request.POST, request.FILES)
+        context['posted'] = form.instance
+        if form.is_valid():
+            form.save()
 
+    return render(request, './subidafoto.html', context)
 
 
 

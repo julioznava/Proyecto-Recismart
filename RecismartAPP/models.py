@@ -73,6 +73,10 @@ TIPO_USUARIO = [
 
 ]
 
+class Fotos(models.Model):
+    image = CloudinaryField('image')
+
+
 
 class CuentaUsuario(AbstractUser):
     Perfil_usuario = models.CharField(max_length=100, choices=TIPO_USUARIO, default='Usuario')
@@ -99,7 +103,7 @@ class RegistroAviso(models.Model):
     Comuna = models.CharField(max_length=100, choices=LISTA_COMUNAS_RM, blank=True, null=True)
     Region = models.CharField(max_length=100, choices=LISTA_REGIONES, blank=True, null=True)
     Fecha_publicacion = models.DateTimeField(default=timezone.now())
-    image = models.ImageField(upload_to='Portafolio/', null=True)
+
 
     def __str__(self):
         return self.Titulo_de_publicacion

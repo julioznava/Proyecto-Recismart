@@ -24,6 +24,9 @@ urlpatterns = [
 
     #PUBLICACION
     path('registroaviso/', registroaviso, name="registroaviso"),
+
+
+    # SUBIDAFOTO (TEST)
+    path('subirfoto/', subirfoto, name="subirfoto"),
+
 ]
-
-
