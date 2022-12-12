@@ -2,7 +2,7 @@
 <h3>Cuentas de login: </h3>
 
      login: test
-    password: taller.2022 ( no disponible aun)
+    password: taller.2022 (DISPONIBLE)
 <br>
 <h3>Instrucciones: </h3>
 
