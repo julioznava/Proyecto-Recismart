@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cloudinary %}
 {% block contenido %}
     <div class="container text-center mt-5">
           <h3 class="display-6">Publicaciones recomendadas</h3>
@@ -13,9 +14,9 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
             <div class="card h-100">
-              <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+              {% cloudinary 'c7rlp49tgycmuii7dy9y.png' width=400 crop="fill" %}
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Televisor LG</h5>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural lead-in to
                   additional content. This content is a little bit longer.
@@ -28,9 +29,9 @@
           </div>
           <div class="col">
             <div class="card h-100">
-              <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+                {% cloudinary 'caxvrip86eubqkvvkolq.png' width=405 crop="fill" %}
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Teclado mecanico</h5>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
               </div>
               <div class="card-footer">
@@ -40,9 +41,9 @@
           </div>
           <div class="col">
             <div class="card h-100">
-              <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Palm Springs Road"/>
+              {% cloudinary 'aew18p3ejqvwwfpfyfzl.png' width=400 crop="fill" %}
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Escritorio de roble</h5>
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural lead-in to
                   additional content. This card has even longer content than the first to show

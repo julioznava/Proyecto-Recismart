@@ -9,13 +9,12 @@
     <title>Recismart</title>
 </head>
 <body style="background-color: #ebeff5">
+{% load cloudinary %}
     <!-- BARRA DE NAVEGACION -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
         <div class="container">
             <a class="navbar-brand" href="#">
-                {% for fotografia in foto %}
-                <img src="{{ fotografia.image.url }}" alt="" width="100">
-                {% endfor %}
+                {% cloudinary 'logo_qhgimo.png' width=180 crop="fill" %}
             </a>
             <button
                 class="navbar-toggler"

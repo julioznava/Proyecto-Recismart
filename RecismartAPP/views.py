@@ -39,9 +39,7 @@ def maspublicaciones(request):
 
     data = {
         'listaraviso': listaraviso,
-
     }
-
     return render(request, './sitio/maspublicaciones.html', data)
 
 
@@ -111,12 +109,8 @@ def panel(request):
     data = {
         'listarusuario': listarusuario,
         'listaraviso': listaraviso,
-
     }
     return render(request, './administrador/panel.html', data)
-
-
-
 
 
 #PUBLICACIONES
@@ -142,18 +136,19 @@ def eliminaraviso(request, id):
     return redirect(to="panel")
 
 
-
-
-
 def subirfoto(request):
-    context = dict(backend_form=FotosForm())
-
     if request.method == 'POST':
-        form = FotosForm(request.POST, request.FILES)
-        context['posted'] = form.instance
-        if form.is_valid():
-            form.save()
+        formulario = FotosForm(request.POST, request.FILES)
+        if formulario.is_valid():
+            formulario.save()
 
+    cargasfotos = Fotos.objects.all()
+    formulario = FotosForm()
+
+    context = {
+        'formulario': formulario,
+        'cargasfotos': cargasfotos,
+    }
     return render(request, './subidafoto.html', context)
 
 

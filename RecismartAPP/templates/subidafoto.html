@@ -1,6 +1,5 @@
-{% load cloudinary %}
 {% load crispy_forms_tags %}
-
+{% load cloudinary %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,16 +16,17 @@
 <br>
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col">
                 <div class="card card-body">
                     <div id='backend_upload'>
                         <form action="#" method="post"
                               enctype="multipart/form-data">
                             {% csrf_token %}
-                            {{ backend_form | crispy }}
-                            {{ backend_form | crispy }}
-                            <div class="d-grid gap-2 d-md-flex justify-content-evenly">
-                                <input type="submit" value="Subir imagenes" class="btn btn-danger" style="color: white">
+                            {{ formulario | crispy }}
+                            <br>
+                            <div class="d-grid gap-2 d-md-flex justify-content-end">
+                                <a class="btn btn-secondary" href="{% url 'registroaviso' %}">Volver</a>
+                                <input type="submit" value="Subir imagenes" class="btn btn-success" style="color: white">
                             </div>
                         </form>
                     </div>
@@ -34,6 +34,35 @@
             </div>
         </div>
     </div>
+
+
+<br>
+<br>
+    <div class="container">
+       <div class="row">
+           <div class="col-3">
+               <div class="card card-body shadow">
+                   {% cloudinary 'c7rlp49tgycmuii7dy9y.png' width=260 crop="fill" %}
+               </div>
+           </div>
+           <div class="col-3">
+               <div class="card card-body shadow">
+                   {% cloudinary 'caxvrip86eubqkvvkolq.png' width=260 crop="fill" %}
+               </div>
+           </div>
+           <div class="col-3">
+               <div class="card card-body shadow">
+                   {% cloudinary 'aew18p3ejqvwwfpfyfzl.png' width=260 crop="fill" %}
+               </div>
+           </div>
+
+           <div class="col-3">
+               <div class="card card-body shadow">
+                   {% cloudinary 'gp9zy648tnhfbv3eebxi.png' width=270 crop="fill" %}
+               </div>
+           </div>
+       </div>
+   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
