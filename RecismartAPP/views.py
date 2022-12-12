@@ -21,7 +21,21 @@ def test(request):
 
 
 def maspublicaciones(request):
-    return render(request, './sitio/maspublicaciones.html')
+    busqueda_aviso = request.GET.get("busqueda_aviso")
+    listaraviso = RegistroAviso.objects.all()
+
+    if busqueda_aviso:
+        listaraviso = RegistroAviso.objects.filter(
+            Q(Titulo_de_publicacion__icontains=busqueda_aviso) |
+            Q(Descripcion__icontains=busqueda_aviso) |
+            Q(Comuna__icontains=busqueda_aviso)
+        ).distinct()
+
+    data = {
+        'listaraviso': listaraviso,
+    }
+
+    return render(request, './sitio/maspublicaciones.html', data)
 
 
 def panelayuda(request):
@@ -93,6 +107,7 @@ def panel(request):
 
     }
     return render(request, './administrador/panel.html', data)
+
 
 
 
