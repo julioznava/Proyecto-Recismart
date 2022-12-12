@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'colorfield',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
     'cloudinary',
 
 ]
@@ -135,6 +137,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 AUTH_USER_MODEL = 'RecismartAPP.CuentaUsuario'
 
+CLOUDINARY_STORAGE = {
+'CLOUD_NAME': 'dwks69ifj',
+'API_KEY': '224344749295745',
+'API_SECRET': 'oC7ytqku4GWOgyHqH3nT6NfoKJs',
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -160,16 +168,8 @@ STATIC_URL = 'static/'
 #
 # MEDIA_ROOT = os.path.join(BASE_DIR, "/media")
 
-
-
-CLOUDINARY_STORAGE = {
-'CLOUD_NAME': 'dwks69ifj',
-'API_KEY': '224344749295745',
-'API_SECRET': 'oC7ytqku4GWOgyHqH3nT6NfoKJs',
-}
-
+MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 
 
 # Default primary key field type
