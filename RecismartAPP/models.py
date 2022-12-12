@@ -88,6 +88,7 @@ class CuentaUsuario(AbstractUser):
     Region = models.CharField(max_length=100, choices=LISTA_REGIONES)
 
 
+
     def __str__(self):
         return self.Rut
 
@@ -98,12 +99,8 @@ class RegistroAviso(models.Model):
     Comuna = models.CharField(max_length=100, choices=LISTA_COMUNAS_RM, blank=True, null=True)
     Region = models.CharField(max_length=100, choices=LISTA_REGIONES, blank=True, null=True)
     Fecha_publicacion = models.DateTimeField(default=timezone.now())
-    # imagen = CloudinaryField('imagen')
+    image = models.ImageField(upload_to='Portafolio/', null=True)
 
     def __str__(self):
         return self.Titulo_de_publicacion
 
-
-# class ImageAviso(models.Model):
-#     image = CloudinaryField('image')
-#     aviso = models.ForeignKey(RegistroAviso, on_delete=models.CASCADE)

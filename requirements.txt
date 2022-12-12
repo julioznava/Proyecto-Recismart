@@ -13,3 +13,4 @@ sqlparse
 tzdata
 wheel
 cloudinary
+cloudinary dj3-cloudinary-storage

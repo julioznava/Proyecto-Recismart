@@ -33,6 +33,7 @@ def maspublicaciones(request):
 
     data = {
         'listaraviso': listaraviso,
+
     }
 
     return render(request, './sitio/maspublicaciones.html', data)

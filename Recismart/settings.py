@@ -162,6 +162,16 @@ STATIC_URL = 'static/'
 
 
 
+CLOUDINARY_STORAGE = {
+'CLOUD_NAME': 'dwks69ifj',
+'API_KEY': '224344749295745',
+'API_SECRET': 'oC7ytqku4GWOgyHqH3nT6NfoKJs',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -169,12 +179,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = ['https://recismart-proyecto-production.up.railway.app']
 
 
-cloudinary.config(
-  cloud_name = "dwks69ifj",
-  api_key = "224344749295745",
-  api_secret = "oC7ytqku4GWOgyHqH3nT6NfoKJs",
-  # secure = True
-)
+
 
 
 # CSRF_TRUSTED_ORIGINS = ['https://recismart-pre-production-8366.up.railway.app']
