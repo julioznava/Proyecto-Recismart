@@ -1,4 +1,6 @@
 {%  include 'navbar2.html' %}
+
+<!-- Sweet -->
 {% block js %}
     <script>
         function eliminarpublicacion(id) {
@@ -9,6 +11,7 @@
     </script>
 
     {% endblock %}
+<!-- fin swwet alert -->
    {% load static %}
 
 
@@ -179,7 +182,7 @@
 
 
                             <td><a class="btn btn-success" href="">Habilitar</a></td>
-                            <td><a  class="btn btn-danger" href="" onclick="eliminarpublicacion({{ avisos.id }})">Deshabilitar</a></td>
+                            <td><a  class="btn btn-danger" href=""onclick="eliminarpublicacion({{ avisos.id }})">Deshabilitar</a></td>
                         </tr>
                             {% endfor %}
                     </table>
