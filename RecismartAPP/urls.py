@@ -25,7 +25,7 @@ urlpatterns = [
 
     #ADMINISTRADOR
     path('panel/', panel, name="panel"),
-    path('eliminaraviso/<id>/', eliminaraviso, name='eliminaraviso'),
+    path('eliminarpublicacion/<id>/', eliminarpublicacion, name='eliminarpublicacion'),
     path('modificarusuario/<id>/', modificarusuario, name="modificarusuario"),
     path('registrocuenta/', registrocuenta, name="registrocuenta"),
 

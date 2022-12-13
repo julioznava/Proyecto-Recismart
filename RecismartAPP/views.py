@@ -4,7 +4,7 @@ from.forms import *
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as dj_login
-
+from django.contrib import messages
 
 
 
@@ -83,6 +83,7 @@ def modificarusuario(request, id):
         context["form"] = formulario
 
     return render(request, './clientes/modificar.html', context)
+
 
 
 # RECOLECTORES
@@ -196,16 +197,18 @@ def registroaviso(request):
         formulario = RegistroAvisoForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            context['mensaje'] = "SE HA REGISTRADO EXITOSAMENTE."
+            messages.success(request, 'Aviso registrado exitosamente')
+            return redirect(to='home')
         else:
             context['form'] = formulario
 
     return render(request, './publicaciones/registro.html', context)
 
 
-def eliminaraviso(request, id):
-    eliminaravisos = get_object_or_404(RegistroAviso, id=id)
-    eliminaravisos.delete()
+def eliminarpublicacion(request, id):
+
+    eliminarpublicacion = get_object_or_404(RegistroAviso, id=id)
+    eliminarpublicacion.delete()
     return redirect(to="panel")
 
 

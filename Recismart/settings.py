@@ -24,16 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-0*w53))2l=nn0oi7x((3!yq1d2lxlr5#!mm03-ys7$r8ua_$x7'
-
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 # EN AMBIENTE PRODUCTIVO
 
 DEBUG = True
-
-#  EN RAILWAY
-
-# DEBUG = False
-
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -41,6 +36,7 @@ LOGOUT_REDIRECT_URL = '/'
 # LOCAL
 ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ['recismart-proyecto-production-00ae.up.railway.app']
+
 
 # Application definition
 

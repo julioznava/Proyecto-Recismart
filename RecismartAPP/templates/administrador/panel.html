@@ -1,5 +1,17 @@
 {%  include 'navbar2.html' %}
+{% block js %}
+    <script>
+        function eliminarpublicacion(id) {
+            Swal.fire({
+
+            })
+        }
+    </script>
+
+    {% endblock %}
    {% load static %}
+
+
 <br>
 <br>
     <!-- ALERTAS DASHBOARD -->
@@ -167,7 +179,7 @@
 
 
                             <td><a class="btn btn-success" href="">Habilitar</a></td>
-                            <td><a  class="btn btn-danger" href="{% url 'eliminaraviso' avisos.id %}">Deshabilitar</a></td>
+                            <td><a  class="btn btn-danger" href="" onclick="eliminarpublicacion({{ avisos.id }})">Deshabilitar</a></td>
                         </tr>
                             {% endfor %}
                     </table>
