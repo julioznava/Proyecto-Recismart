@@ -1,6 +1,7 @@
 from django import forms
 from .models import *
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 LISTA_REGIONES = [
     ['Region Metropolitana', 'Region Metropolitana'],
@@ -75,7 +76,7 @@ class FotosForm(forms.ModelForm):
     class Meta:
         model = Fotos
         fields = '__all__'
-class CuentaUsuarioCreationForm(UserCreationForm):
+class CuentaUsuarioForm(forms.ModelForm):
     # Perfil_usuario = forms.ChoiceField(choices=TIPO_USUARIO, label='Seleccione el tipo de rol para el sitio')
     Comuna = forms.ChoiceField(choices=LISTA_COMUNAS_RM, label='Seleccione la comuna')
     Region = forms.ChoiceField(choices=LISTA_REGIONES, label='Seleccione la region')
@@ -83,9 +84,35 @@ class CuentaUsuarioCreationForm(UserCreationForm):
 
     class Meta:
         model = CuentaUsuario
-        fields = ['Perfil_usuario', 'Rut', 'Rut_Empresa', 'Nombre_de_empresa', 'first_name', 'last_name', 'Correo', 'Telefono', 'Direccion', 'Comuna', 'Region', 'username', 'password1', 'password2', 'date_joined']
+        fields = ['Perfil_usuario', 'Rut', 'Nombre', 'Apellido', 'fecha_nacimiento', 'Correo', 'Telefono', 'Direccion', 'Comuna', 'Region']
+        widgets = {
+            'fecha_nacimiento': forms.SelectDateWidget
+        }
+
+class CuentaRecolectorForm(forms.ModelForm):
+    # Perfil_usuario = forms.ChoiceField(choices=TIPO_USUARIO, label='Seleccione el tipo de rol para el sitio')
+    Comuna = forms.ChoiceField(choices=LISTA_COMUNAS_RM, label='Seleccione la comuna')
+    Region = forms.ChoiceField(choices=LISTA_REGIONES, label='Seleccione la region')
 
 
+    class Meta:
+        model = CuentaRecolector
+        fields = ['Perfil_usuario', 'Rut', 'Rut_Empresa', 'Nombre_de_empresa', 'Nombre', 'Apellido', 'fecha_nacimiento', 'Correo', 'Telefono', 'Direccion', 'Comuna', 'Region']
+        widgets = {
+            'fecha_nacimiento': forms.SelectDateWidget
+        }
+class CuentaAdminForm(forms.ModelForm):
+    # Perfil_usuario = forms.ChoiceField(choices=TIPO_USUARIO, label='Seleccione el tipo de rol para el sitio')
+    Comuna = forms.ChoiceField(choices=LISTA_COMUNAS_RM, label='Seleccione la comuna')
+    Region = forms.ChoiceField(choices=LISTA_REGIONES, label='Seleccione la region')
+
+
+    class Meta:
+        model = CuentaAdmin
+        fields = ['Perfil_usuario', 'Rut', 'Nombre', 'Apellido', 'fecha_nacimiento', 'Correo', 'Telefono']
+        widgets = {
+            'fecha_nacimiento': forms.SelectDateWidget
+        }
 class RegistroAvisoForm(forms.ModelForm):
     Titulo_de_publicacion = forms.CharField(max_length=100, label='Ingrese un Titulo')
     Comuna = forms.ChoiceField(choices=LISTA_COMUNAS_RM, label='Seleccione la comuna')
@@ -97,7 +124,7 @@ class RegistroAvisoForm(forms.ModelForm):
 
 
 
-# class RegistroForm(UserCreationForm):
+# class RegistroCuentaForm(UserCreationForm):
 #     username = forms.CharField(required=True, label= 'Crear una cuenta de usuario')
 #     email = forms.EmailField(required=True, label='Ingrese el mail de validacion.')
 #     password1 = forms.CharField(widget=forms.PasswordInput, label='Ingrese una contraseña')
@@ -112,9 +139,9 @@ class RegistroAvisoForm(forms.ModelForm):
 
 
 
-# class CustomUserCreationForm(UserCreationForm):
-#     class Meta:
-#         model = User
-#         fields = ['username', 'password1', 'password2', 'user_permissions', 'date_joined', 'last_login']
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2', 'user_permissions', 'date_joined', 'last_login']
 
 

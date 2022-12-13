@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+{% load crispy_forms_tags %}
+{% load cloudinary %}
+    <br>
+    <br>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col mb-4">
+             <div class="card">
+
+
+             <div class="view overlay shadow card-body">
+                 {% cloudinary 'usuarios_hdbtt0.png' width=600 crop="fill" %}
+            </div>
+
+
+      <div class="card-body text-center">
+          <br>
+        <h4 class="card-title">Registro usuarios</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+          card's content.</p>
+          <a href="{% url 'registrousuario' %}" class="btn btn-success btn-lg">Registro</a>
+      </div>
+    </div>
+    <!-- Card -->
+  </div>
+  <div class="col mb-4">
+    <!-- Card -->
+    <div class="card">
+
+      <!--Card image-->
+      <div class="view overlay shadow card-body">
+            {% cloudinary 'recolector_aqzc4e.png' width=600 crop="fill" %}
+
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+
+      <div class="card-body text-center ">
+          <br>
+        <h4 class="card-title">Registro recolectores</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+          card's content.</p>
+          <a href="{% url 'registrorecolector' %}" class="btn btn-success btn-lg">Registro</a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

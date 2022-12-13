@@ -28,19 +28,19 @@ SECRET_KEY = 'django-insecure-0*w53))2l=nn0oi7x((3!yq1d2lxlr5#!mm03-ys7$r8ua_$x7
 
 # EN AMBIENTE PRODUCTIVO
 
-# DEBUG = True
+DEBUG = True
 
 #  EN RAILWAY
 
-DEBUG = False
+# DEBUG = False
 
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # LOCAL
-#ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['recismart-proyecto-production-00ae.up.railway.app']
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['recismart-proyecto-production-00ae.up.railway.app']
 
 # Application definition
 
@@ -133,7 +133,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-AUTH_USER_MODEL = 'RecismartAPP.CuentaUsuario'
+
 
 cloudinary.config(
   cloud_name = "dwks69ifj",
@@ -174,13 +174,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# CSRF_TRUSTED_ORIGINS = ['https://recismart-proyecto-production.up.railway.app']
 
-
-
-
-
-CSRF_TRUSTED_ORIGINS = ['https://recismart-proyecto-production-00ae.up.railway.app']
+# CSRF_TRUSTED_ORIGINS = ['https://recismart-proyecto-production-00ae.up.railway.app']
 
 
 

@@ -32,50 +32,6 @@
 
 <br>
 <br>
-<br>
-{#    <div class="container">#}
-{#        <div class="row text-center">#}
-{#            <div class="col">#}
-{#                <div class="card card-body shadow">#}
-{#                    <h5>LISTADO DE RECOLECTORES REGISTRADOS</h5>#}
-{#                    <br>#}
-{#                    <div class="row text-center">#}
-{#                        <div class="col">#}
-{#                            <form class="form-inline">#}
-{#                                <input class="form-control mr-sm-" type="search" placeholder="Buscar por Titulo o Descripcion..." aria-label="Search" name="busqueda_aviso">#}
-{#                            </form>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <!--TABLA RECOLECTORES REGISTRADOS -->#}
-{#                    <table class="table table-responsive-md thead-light text-center" >#}
-{#                        <tr>#}
-{#                            <th>Rut</th>#}
-{#                            <th>Nombre</th>#}
-{#                            <th>Apellido</th>#}
-{#                            <th>Telefono</th>#}
-{#                            <th>Nombre empresa</th>#}
-{#                        </tr>#}
-{#                            {% for recolector in listarrecolector %}#}
-{#                        <tr>#}
-{#                            <td>{{ recolector.Rut_Empresa }}</td>#}
-{#                            <td>{{ recolector.Nombre }}</td>#}
-{#                            <td>{{ recolector.Apellido }}</td>#}
-{#                            <td>{{ recolector.Telefono }}</td>#}
-{#                            <td>{{ recolector.Nombre_de_empresa }}</td>#}
-{#                            <td><a class="btn btn-success" href="#">Habilitar</a></td>#}
-{#                            <td><a class="btn btn-danger" href="#">Deshabilitar</a></td>#}
-{#                        </tr>#}
-{#                            {% endfor %}#}
-{#                    </table>#}
-{#                    <!--FIN TABLA RECOLECTORES REGISTRADOS -->#}
-{#                </div>#}
-{#            </div>#}
-{##}
-{##}
-{#        </div>#}
-{#    </div>#}
-<br>
-<br>
 
     <div class="container-fluid">
         <div class="row text-center">
@@ -90,29 +46,83 @@
                             </form>
                         </div>
                     </div>
-                    <!--TABLA RECOLECTORES REGISTRADOS -->
+                    <!--TABLA USUARIOS REGISTRADOS -->
                     <table class="table table-sm text-center">
                         <tr>
                             <th>Rut</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
+                            <th>Fecha de nacimiento</th>
                             <th>Correo electronico</th>
                             <th>Comuna</th>
                             <th>Perfil usuario</th>
-                            <th>Fecha de registro</th>
+
 
                         </tr>
                             {% for usuarios in listarusuario %}
                         <tr>
                             <td>{{ usuarios.Rut }}</td>
-                            <td>{{ usuarios.first_name }}</td>
-                            <td>{{ usuarios.last_name }}</td>
+                            <td>{{ usuarios.Nombre }}</td>
+                            <td>{{ usuarios.Apellido }}</td>
+                            <td>{{ usuarios.fecha_nacimiento }}</td>
                             <td>{{ usuarios.Correo }}</td>
                             <td>{{ usuarios.Comuna }}</td>
                             <td>{{ usuarios.Perfil_usuario }}</td>
-                            <td>{{ usuarios.date_joined }}</td>
 
-                            <td><a class="btn btn-success" href="{% url 'modificarusuario' usuarios.id %}">Habilitar</a></td>
+
+                            <td><a class="btn btn-success" href="{% url 'registrocuenta' %}">Habilitar</a></td>
+                            <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                <!--FIN TABLA USUARIOS REGISTRADOS -->
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-12">
+                <div class="card card-body shadow">
+                    <h5 class="text-center">LISTADO DE RECOLECTORES REGISTRADOS</h5>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-" type="search" placeholder="Buscar por Rut, Perfil usuario, email..." aria-label="Search" name="busqueda_recolector">
+                            </form>
+                        </div>
+                    </div>
+                    <!--TABLA RECOLECTORES REGISTRADOS -->
+                    <table class="table table-sm text-center">
+                        <tr>
+                            <th>Rut</th>
+                            <th>Rut empresa</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Nombre de la empresa</th>
+                            <th>Telefono</th>
+                            <th>Correo electronico</th>
+                            <th>Comuna</th>
+                            <th>Perfil usuario</th>
+
+
+                        </tr>
+                            {% for recolector in listarecolector %}
+                        <tr>
+                            <td>{{ recolector.Rut }}</td>
+                            <td>{{ recolector.Rut_Empresa }}</td>
+                            <td>{{ recolector.Nombre }}</td>
+                            <td>{{ recolector.Apellido }}</td>
+                            <td>{{ recolector.Nombre_de_empresa }}</td>
+                            <td>{{ recolector.Telefono }}</td>
+                            <td>{{ recolector.Correo }}</td>
+                            <td>{{ recolector.Comuna }}</td>
+                            <td>{{ recolector.Perfil_usuario }}</td>
+
+                            <td><a class="btn btn-success" href="{% url 'registrocuenta' %}">Habilitar</a></td>
                             <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
                         </tr>
                         {% endfor %}
@@ -156,7 +166,7 @@
                             <td>{{ avisos.Fecha_publicacion }}</td>
 
 
-                            <td><a class="btn btn-success" href="#">Habilitar</a></td>
+                            <td><a class="btn btn-success" href="">Habilitar</a></td>
                             <td><a  class="btn btn-danger" href="{% url 'eliminaraviso' avisos.id %}">Deshabilitar</a></td>
                         </tr>
                             {% endfor %}
