@@ -72,10 +72,8 @@ TIPO_USUARIO = [
     ['Invitado', 'Invitado'],
 
 ]
-
 class Fotos(models.Model):
     image = CloudinaryField('image')
-
 
 
 class CuentaUsuario(AbstractUser):
@@ -91,8 +89,6 @@ class CuentaUsuario(AbstractUser):
     Comuna = models.CharField(max_length=100, choices=LISTA_COMUNAS_RM)
     Region = models.CharField(max_length=100, choices=LISTA_REGIONES)
 
-
-
     def __str__(self):
         return self.Rut
 
@@ -103,7 +99,7 @@ class RegistroAviso(models.Model):
     Comuna = models.CharField(max_length=100, choices=LISTA_COMUNAS_RM, blank=True, null=True)
     Region = models.CharField(max_length=100, choices=LISTA_REGIONES, blank=True, null=True)
     Fecha_publicacion = models.DateTimeField(default=timezone.now())
-
+    imagen = models.ForeignKey(Fotos, on_delete=models.CASCADE, blank= True, null=True)
 
     def __str__(self):
         return self.Titulo_de_publicacion
