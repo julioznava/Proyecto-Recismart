@@ -34,12 +34,13 @@ SECRET_KEY = 'django-insecure-0*w53))2l=nn0oi7x((3!yq1d2lxlr5#!mm03-ys7$r8ua_$x7
 
 DEBUG = False
 
-# ALLOWED_HOSTS = ['recismart-proyecto-production-00ae.up.railway.app']
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # LOCAL
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['recismart-proyecto-production-00ae.up.railway.app']
 
 # Application definition
 
