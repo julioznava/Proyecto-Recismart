@@ -28,14 +28,14 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 # EN AMBIENTE PRODUCTIVO
 
-DEBUG = True
+DEBUG = False
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # LOCAL
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['recismart-proyecto-production-00ae.up.railway.app']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['recismart-proyecto-production-00ae.up.railway.app']
 
 
 # Application definition
@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'colorfield',
     'cloudinary',
-
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
@@ -171,7 +170,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CSRF_TRUSTED_ORIGINS = ['https://recismart-proyecto-production-00ae.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://recismart-proyecto-production-00ae.up.railway.app']
 
 
 
