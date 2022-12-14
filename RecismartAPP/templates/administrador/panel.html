@@ -5,12 +5,19 @@
     <script>
         function eliminarpublicacion(id) {
             Swal.fire({
-
+                "title": "prueba1",
+                "text": "la oracion",
+                "icon": "question",
+                "showCancelButton": true
             })
+                .then(function(result){
+                    if (result.is.Confirmed){
+                        window.location.href = "eliminarpublicacion/"+id+"/"
+                    }
+                })
         }
     </script>
-
-    {% endblock %}
+{% endblock %}
 <!-- fin swwet alert -->
    {% load static %}
 
