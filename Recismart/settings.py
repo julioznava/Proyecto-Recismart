@@ -35,7 +35,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 # LOCAL
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['recismart-proyecto-production-00ae.up.railway.app']
+ALLOWED_HOSTS = ['recismart-proyecto-production-ecef.up.railway.app']
 
 
 # Application definition
@@ -103,12 +103,12 @@ DATABASES = {
     }
 }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 
 
 # Password validation
