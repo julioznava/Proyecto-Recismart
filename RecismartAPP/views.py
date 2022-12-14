@@ -104,6 +104,10 @@ def registrorecolector(request):
 # ADMINISTRADOR
 
 
+def reportes(request):
+    return render(request, './administrador/reportes.html')
+
+
 def registrocuenta(request):
     context = {
         'form': CustomUserCreationForm()
