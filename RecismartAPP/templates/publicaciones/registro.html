@@ -1,4 +1,4 @@
-{% include 'navbar2.html' %}
+{% include 'base2.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
 {% load cloudinary %}
@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h5 class="display-6 py-md-4 shadow bg-primary text-center" style="color: white; border-radius: 10px">Publicar Aviso</h5>
+                <h5 class="display-6 py-md-4 shadow  text-center" style="color: #A2DE96; border-radius: 10px; background-color: #343C42">Publicar Aviso</h5>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
                 <h4 class="mt-2">Adjuntar imagenes</h4>
                 <br>
                 <div class="d-flex justify-content-lg-start">
-                    <a href="{% url 'subirfoto' %}" class="btn btn-outline-primary btn-lg shadow">Adjuntar</a>
+                    <a href="{% url 'subirfoto' %}" class="btn btn-outline-success btn-lg shadow">Adjuntar</a>
                 </div>
                 <br>
             </div>

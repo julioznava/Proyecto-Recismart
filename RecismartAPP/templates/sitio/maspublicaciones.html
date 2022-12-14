@@ -7,7 +7,7 @@
     <div class="container">
             <div class="row">
                 <div class="col">
-                    <h5 class="display-6 py-md-4 shadow bg-primary text-center" style="color: white; border-radius: 10px">Publicaciones recientes</h5>
+                    <h5 class="display-6 py-md-4 shadow  text-center" style="color: #A2DE96; border-radius: 10px; background-color: #343C42">Publicaciones recientes</h5>
                 </div>
             </div>
     </div>
@@ -16,7 +16,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="card card-body">
+                <div class="card card-body shadow">
                     <form class="form-inline">
                         <input class="form-control mr-sm-" type="search" placeholder="Buscar por Titulo, Descripcion, Region o comuna..." aria-label="Search" name="busqueda_aviso">
                     </form>
@@ -51,7 +51,7 @@
                           <td class="text-center">{{ avisos.Region }}</td>
                           <td class="text-center">{{ avisos.Fecha_publicacion }}</td>
                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <td><a class="btn btn-primary me-md-2" type="button" href="#">Ver</a></td>
+                                <td><a class="btn btn-success me-md-2" type="button" href="#">Ver</a></td>
                            </div>
                         </tr>
                         {% endfor %}

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,15 +7,26 @@
     {%  load static %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Recismart</title>
+
+    <style>
+        * {
+            font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
 </head>
+
 <body style="background-color: #ebeff5">
+
 {% load cloudinary %}
     <!-- BARRA DE NAVEGACION -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #343C42">
         <div class="container">
             <a class="navbar-brand" href="#">
-                {% cloudinary 'logo_qhgimo.png' width=180 crop="fill" %}
+                {% cloudinary 'recismartf_c6klmu.png' width=180 crop="fill" %}
             </a>
             <button
                 class="navbar-toggler"
@@ -27,16 +39,17 @@
                  <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Inicio</a>
+                <div class="container">
+                    <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}" style="color: #A2DE96; ">Inicio</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Quienes Somos</a>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: #A2DE96">Quienes Somos</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'panelayuda' %}">Ayuda</a>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'panelayuda' %}" style="color: #A2DE96">Ayuda</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'registroaviso' %}">Publicar Aviso</a>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'registroaviso' %}" style="color: #A2DE96">Publicar Aviso</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'panel' %}">Panel (temporal)</a>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'panel' %}" style="color: #A2DE96">Panel (temporal)</a>
                     </li>
                     {% if user.is_authenticated %}
                         <li>
@@ -44,13 +57,17 @@
                         </li>
                     {% else %}
                         <li>
-                            <a class="btn btn-primary" type="button" href="{% url 'login' %}">Acceso</a>
+{#                            <a class="btn btn-primary" type="button" href="{% url 'login' %}">Acceso</a>#}
                         </li>
                     {% endif %}
                 </ul>
-            <div class="botones">
-            <div class="d-grid gap-2 d-md-block">
-                <a class="btn btn-primary" type="button" href="{% url 'panelregistro' %}">Registrarse</a>
+                </div>
+                <br>
+            <div class="container-fluid">
+            <div class="d-grid d-md-block">
+                <a class="btn btn-outline-secondary shadow" type="button" href="{% url 'panelregistro' %}" style="color: #7BD196">Registrarse</a>
+                 &nbsp;
+                <a class="btn btn-success shadow" type="button" href="{% url 'login' %}">Acceso</a>
             </div>
             </div>
             </div>
@@ -71,39 +88,39 @@
     <br>
     <br>
 
-<footer class="bg-primary text-center text-white">
+<footer class="text-center text-white" style="background-color: #343C42">
   <!-- Grid container -->
   <div class="container p-4">
     <!-- Section: Social media -->
     <section class="mb-4">
       <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
-        ><i class="fab fa-facebook-f"></i
+      <a class="btn  btn-floating m-3" href="https://www.facebook.com/" role="button"
+        ><i class="fab fa-facebook-f" style="color:#6DD57E;"></i
       ></a>
 
       <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
-        ><i class="fab fa-twitter"></i
+      <a class="btn  btn-floating m-3" href="https://twitter.com/" role="button"
+        ><i class="fab fa-twitter" style="color:#6DD57E;"></i
       ></a>
 
       <!-- Google -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
-        ><i class="fab fa-google"></i
+      <a class="btn  btn-floating m-3" href="https://www.google.com/" role="button"
+        ><i class="fab fa-google" style="color:#6DD57E;"></i
       ></a>
 
       <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
-        ><i class="fab fa-instagram"></i
+      <a class="btn  btn-floating m-3" href="https://www.instagram.com/" role="button"
+        ><i class="fab fa-instagram" style="color:#6DD57E;"></i
       ></a>
 
       <!-- Linkedin -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/" role="button"
-        ><i class="fab fa-linkedin-in"></i
+      <a class="btn  btn-floating m-3" href="https://www.linkedin.com/" role="button"
+        ><i class="fab fa-linkedin-in" style="color:#6DD57E;"></i
       ></a>
 
       <!-- Github -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" role="button"
-        ><i class="fab fa-github"></i
+      <a class="btn  btn-floating m-3" href="https://github.com/" role="button"
+        ><i class="fab fa-github" style="color:#6DD57E; width: 50px"></i
       ></a>
     </section>
     <!-- Section: Social media -->
@@ -116,7 +133,7 @@
           <!--Grid column-->
           <div class="col-auto">
             <p class="pt-2">
-              <strong>Registrate para obtener noticias!</strong>
+              <strong style="color: #9BDE93">Registrate para obtener noticias!</strong>
             </p>
           </div>
           <!--Grid column-->
@@ -126,7 +143,7 @@
             <!-- Email input -->
             <div class="form-outline form-white mb-4">
               <input type="email" id="form5Example21" class="form-control" />
-              <label class="form-label" for="form5Example21">Correo electronico</label>
+              <label class="form-label" for="form5Example21" style="color: #9BDE93">Correo electronico</label>
             </div>
           </div>
           <!--Grid column-->
@@ -134,8 +151,8 @@
           <!--Grid column-->
           <div class="col-auto">
             <!-- Submit button -->
-            <button type="submit" class="btn btn-outline-light mb-4">
-              Subsribirse
+            <button type="submit" class="btn mb-4"  style="color: #9BDE93">
+              Subscribete!
             </button>
           </div>
           <!--Grid column-->
@@ -157,12 +174,15 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2022 Taller de soluciones:
-    <a class="text-white" href="https://www.inacap.cl">INACAP</a>
+    <a class="" href="https://www.inacap.cl" style="color: #9BDE93">INACAP</a>
   </div>
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
     <!--FIN  FOOTER-->
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {% if  messages %}
