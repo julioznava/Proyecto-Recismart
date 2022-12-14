@@ -78,6 +78,7 @@ TIPO_RECOLECTOR = [
 ]
 
 
+
 class Fotos(models.Model):
     image = CloudinaryField('image')
 
@@ -136,6 +137,7 @@ class RegistroAviso(models.Model):
     Region = models.CharField(max_length=100, choices=LISTA_REGIONES, blank=True, null=True)
     Fecha_publicacion = models.DateTimeField(default=timezone.now, verbose_name='Fecha de la publicacion')
     imagen = models.ForeignKey(Fotos, on_delete=models.CASCADE, blank= True, null=True, verbose_name='Imagenes de la publicacion')
+    usuario = models.ForeignKey(CuentaUsuario, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.Titulo
