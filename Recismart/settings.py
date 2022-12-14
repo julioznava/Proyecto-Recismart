@@ -28,14 +28,14 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 # EN AMBIENTE PRODUCTIVO
 
-DEBUG = True
+DEBUG = False
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # LOCAL
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['recismart-proyecto-production-ecef.up.railway.app']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['recismart-proyecto-production-ecef.up.railway.app']
 
 
 # Application definition
@@ -171,7 +171,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CSRF_TRUSTED_ORIGINS = ['https://recismart-proyecto-production-ecef.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://recismart-proyecto-production-ecef.up.railway.app']
 
 
 
