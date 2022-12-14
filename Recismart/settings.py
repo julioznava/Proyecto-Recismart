@@ -170,7 +170,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['https://recismart-proyecto-production-00ae.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://recismart-proyecto-production-ecef.up.railway.app']
 
 
 
