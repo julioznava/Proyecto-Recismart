@@ -15,6 +15,18 @@
 <br>
     <!-- PUBLICACION INGRESO -->
     <div class="container">
+        <br>
+            <div class="col-md">
+            <div class="card card-header align-items-center bg-white shadow" style="border: none">
+                <h4 class="mt-2">Adjuntar imagenes</h4>
+                <br>
+                <div class="d-flex justify-content-lg-start">
+                    <a href="{% url 'subirfoto' %}" class="btn btn-outline-primary btn-lg shadow">Adjuntar</a>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br>
         <div class="row">
             <div class="col">
                 <div class="card card-body shadow">
@@ -22,10 +34,6 @@
                         {% csrf_token %}
                         {{ form | crispy }}
                         <br>
-                         <div class="d-flex justify-content-lg-start">
-                             <a href="{% url 'subirfoto' %}" class="btn btn-outline-primary">Ingresar foto</a>
-                        </div>
-
                         <div class="d-flex justify-content-end">
                             <input type="reset" value="cancelar" class="btn btn-secondary">
                                                 &nbsp;

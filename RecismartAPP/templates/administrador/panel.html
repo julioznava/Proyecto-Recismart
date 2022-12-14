@@ -1,60 +1,73 @@
 {%  include 'navbar2.html' %}
+{% load static %}
+<!-- Sweet alert (REVISAR!!!) -->
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{#    <script>#}
+{#        function eliminarecolector(id){#}
+{#            console(id)#}
+{#            Swal.fire({#}
+{#                "title": "prueba1",#}
+{#                "text": "la oracion",#}
+{#                "icon": "question",#}
+{#                "showCancelButton": true#}
+{#            })#}
+{#                .then(function(result){#}
+{#                    if (result.is.Confirmed){#}
+{#                        window.location.href = "eliminarecolector/"+id+"/"#}
+{#                    }#}
+{#                })#}
+{#        }#}
+{#    </script>#}
 
-<!-- Sweet -->
-{% block js %}
-    <script>
-        function eliminarpublicacion(id) {
-            Swal.fire({
-                "title": "prueba1",
-                "text": "la oracion",
-                "icon": "question",
-                "showCancelButton": true
-            })
-                .then(function(result){
-                    if (result.is.Confirmed){
-                        window.location.href = "eliminarpublicacion/"+id+"/"
-                    }
-                })
-        }
-    </script>
-{% endblock %}
-<!-- fin swwet alert -->
-   {% load static %}
-
+<!-- fin sweet alert -->
 
 <br>
 <br>
     <!-- ALERTAS DASHBOARD -->
-    <div class="container text-center">
+    <div class="container">
         <div class="row">
             <div class="col-4">
-                <div class="card card-body alert alert-success shadow" role="alert" style="border: none">
-                    <h4>Recolectores registrados</h4>
-                    <p style="font-size: 80px">2</p>
+                <div class="col-md">
+                    <div class="card text-center text-dark mb-3 alert alert-info shadow" id="total_listarusuario" style="border: none;">
+                        <div class="card-header">
+                            <h5 class="card-title" style="color: #318497">Total usuarios</h5>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" style="color: #318497">{{ total_listarusuario }}</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="col-4">
-                <div class="card card-body alert alert-dark shadow" role="alert" style="border: none">
-                    <h4>Usuarios registrados</h4>
-                    <p style="font-size: 80px">2</p>
-
+                <div class="col-md">
+                    <div class="card text-center text-dark mb-3 alert alert-dark shadow" id="total_listarusuario" style="border: none">
+                        <div class="card-header">
+                            <h5 class="card-title" style="color: #6B6B6B">Total recolectores</h5>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" style="color: #6B6B6B">{{ total_listarecolector }}</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="col-4">
-                <div class="card card-body alert alert-danger shadow" role="alert" style="border: none">
-                    <h4>Publicaciones registradas</h4>
-                    <p style="font-size: 80px">2</p>
+                <div class="col-md">
+                    <div class="card text-center text-dark mb-3 alert alert-success shadow" id="total_listarusuario" style="border: none">
+                        <div class="card-header">
+                            <h5 class="card-title" style="color: #51876E">Total de publicaciones</h5>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" style="color: #51876E">{{ total_listaraviso }}</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- FIN ALERTAS DASHBOARD -->
-
 <br>
 <br>
-
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-12">
@@ -93,7 +106,7 @@
 
 
                             <td><a class="btn btn-success" href="{% url 'registrocuenta' %}">Habilitar</a></td>
-                            <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
+                            <td><a  class="btn btn-danger" href="{% url 'eliminarusuario' usuarios.id %}">Deshabilitar</a>
                         </tr>
                         {% endfor %}
                     </table>
@@ -145,7 +158,7 @@
                             <td>{{ recolector.Perfil_usuario }}</td>
 
                             <td><a class="btn btn-success" href="{% url 'registrocuenta' %}">Habilitar</a></td>
-                            <td><a  class="btn btn-danger" href="#">Deshabilitar</a></td>
+                            <td><a  class="btn btn-danger" href="{% url 'eliminarecolector' recolector.id %}">Deshabilitar</a>
                         </tr>
                         {% endfor %}
                     </table>
@@ -173,23 +186,22 @@
 
                     <table class="table table-responsive-md thead-light text-center">
                         <tr>
-                            <th>Comuna</th>
-                            <th>Region</th>
                             <th>Titulo publicacion</th>
                             <th>Descripcion</th>
+                            <th>Comuna</th>
+                            <th>Region</th>
                             <th>Fecha de publicacion</th>
                         </tr>
                             {% for avisos in listaraviso %}
                         <tr>
+                            <td>{{ avisos.Titulo }}</td>
+                            <td>{{ avisos.Descripcion }}</td>
                             <td>{{ avisos.Comuna }}</td>
                             <td>{{ avisos.Region }}</td>
-                            <td>{{ avisos.Titulo_de_publicacion }}</td>
-                            <td>{{ avisos.Descripcion }}</td>
                             <td>{{ avisos.Fecha_publicacion }}</td>
 
-
                             <td><a class="btn btn-success" href="">Habilitar</a></td>
-                            <td><a  class="btn btn-danger" href=""onclick="eliminarpublicacion({{ avisos.id }})">Deshabilitar</a></td>
+                            <td><a  class="btn btn-danger" href="{% url 'eliminarpublicacion' avisos.id %}">Deshabilitar</a>
                         </tr>
                             {% endfor %}
                     </table>
@@ -200,4 +212,15 @@
         <br>
         <br>
         <br>
+    {% if  messages %}
+        {%  for m  in messages %}
+            <script>
+                Swal.fire({
+                    "title": 'Felicitaciones',
+                    "text": '{{ m }}',
+                    "icon": 'success',
+                })
+            </script>
+        {% endfor %}
+    {% endif %}
     </div>

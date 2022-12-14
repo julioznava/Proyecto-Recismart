@@ -7,8 +7,6 @@ from django.contrib.auth import authenticate, login as dj_login
 from django.contrib import messages
 
 
-
-
 #SITIO
 def home(request):
     foto = Fotos.objects.all()
@@ -60,7 +58,7 @@ def registrousuario(request):
         formulario = CuentaUsuarioForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            messages.success(request, 'Te has registrado exitosamente.')
+            messages.success(request, '¡Te has registrado exitosamente! Nuestros administradores revisaran tu solicitud de ingreso y te enviaremos un mail con las credenciales de acceso al correo que has registrado.')
             return redirect(to="home")
 
         context['form'] = formulario
@@ -96,7 +94,7 @@ def registrorecolector(request):
         formulario = CuentaRecolectorForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            messages.success(request, 'Te has registrado exitosamente.')
+            messages.success(request, '¡Te has registrado exitosamente! Nuestros administradores revisaran tu solicitud de ingreso y te enviaremos un mail con las credenciales de acceso al correo que has registrado.')
             return redirect(to="home")
 
         context['form'] = formulario
@@ -116,13 +114,11 @@ def registrocuenta(request):
             formulario.save()
             user = authenticate(username=formulario.cleaned_data['username'], password=formulario.cleaned_data['password1'])
             dj_login(request, user)
-            messages.success(request, 'el usuario se encuentra activado exitosamente.')
+            messages.success(request, 'Se ha realizado la activación de la cuenta exitosamente..')
             return redirect(to="panel")
 
         context['form'] = formulario
     return render(request, './administrador/registrocuenta.html', context)
-
-
 
 
 
@@ -134,7 +130,7 @@ def registroadministrador(request):
         formulario = CuentaAdminForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            messages.success(request, 'Te has registrado exitosamente.')
+            messages.success(request, 'Se ha realizado la el registro de la cuenta administrador exitosamente..')
             return redirect(to="home")
 
         context['form'] = formulario
@@ -149,6 +145,9 @@ def panel(request):
     listarecolector = CuentaRecolector.objects.all()
     listaraviso = RegistroAviso.objects.all()
 
+    total_listarusuario = listarusuario.count()
+    total_listarecolector = listarecolector.count()
+    total_listaraviso = listaraviso.count()
 
     if busqueda_usuario:
         listarusuario = CuentaUsuario.objects.filter(
@@ -181,10 +180,36 @@ def panel(request):
     context = {
         'listarusuario': listarusuario,
         'listaraviso': listaraviso,
-        'listarecolector': listarecolector
-
+        'listarecolector': listarecolector,
+        'total_listarusuario': total_listarusuario,
+        'total_listarecolector': total_listarecolector,
+        'total_listaraviso': total_listaraviso,
     }
     return render(request, './administrador/panel.html', context)
+
+
+def eliminarusuario(request, id):
+
+    eliminarusuario = get_object_or_404(CuentaUsuario, id=id)
+    eliminarusuario.delete()
+    messages.success(request, 'Usuario eliminado exitosamente')
+    return redirect(to="panel")
+
+
+
+def eliminarecolector(request, id):
+
+    eliminarecolector = get_object_or_404(CuentaRecolector, id=id)
+    eliminarecolector.delete()
+    messages.success(request, 'Recolector eliminado exitosamente')
+    return redirect(to="panel")
+
+def eliminarpublicacion(request, id):
+
+    eliminarpublicacion = get_object_or_404(RegistroAviso, id=id)
+    eliminarpublicacion.delete()
+    messages.success(request, 'Publicacion eliminada exitosamente')
+    return redirect(to="panel")
 
 
 #PUBLICACIONES
@@ -197,19 +222,13 @@ def registroaviso(request):
         formulario = RegistroAvisoForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            messages.success(request, 'Aviso registrado exitosamente')
+            messages.success(request, '¡Tu publicación ha sido registrado exitosamente!. Nuestros administradores revisaran tu solicitud y en breves minutos será aprobada.')
             return redirect(to='home')
         else:
             context['form'] = formulario
 
     return render(request, './publicaciones/registro.html', context)
 
-
-def eliminarpublicacion(request, id):
-
-    eliminarpublicacion = get_object_or_404(RegistroAviso, id=id)
-    eliminarpublicacion.delete()
-    return redirect(to="panel")
 
 
 def subirfoto(request):

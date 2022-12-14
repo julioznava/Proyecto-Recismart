@@ -68,8 +68,11 @@ TIPO_USUARIO = [
     ['Usuario', 'Usuario'],
     ['Recolector', 'Recolector'],
     ['Invitado', 'Invitado'],
-
 ]
+
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
 
 class FotosForm(forms.ModelForm):
 
@@ -86,7 +89,7 @@ class CuentaUsuarioForm(forms.ModelForm):
         model = CuentaUsuario
         fields = ['Perfil_usuario', 'Rut', 'Nombre', 'Apellido', 'fecha_nacimiento', 'Correo', 'Telefono', 'Direccion', 'Comuna', 'Region']
         widgets = {
-            'fecha_nacimiento': forms.SelectDateWidget
+            'fecha_nacimiento': DateInput()
         }
 
 class CuentaRecolectorForm(forms.ModelForm):
@@ -99,7 +102,7 @@ class CuentaRecolectorForm(forms.ModelForm):
         model = CuentaRecolector
         fields = ['Perfil_usuario', 'Rut', 'Rut_Empresa', 'Nombre_de_empresa', 'Nombre', 'Apellido', 'fecha_nacimiento', 'Correo', 'Telefono', 'Direccion', 'Comuna', 'Region']
         widgets = {
-            'fecha_nacimiento': forms.SelectDateWidget
+            'fecha_nacimiento': DateInput()
         }
 class CuentaAdminForm(forms.ModelForm):
     # Perfil_usuario = forms.ChoiceField(choices=TIPO_USUARIO, label='Seleccione el tipo de rol para el sitio')
@@ -111,16 +114,13 @@ class CuentaAdminForm(forms.ModelForm):
         model = CuentaAdmin
         fields = ['Perfil_usuario', 'Rut', 'Nombre', 'Apellido', 'fecha_nacimiento', 'Correo', 'Telefono']
         widgets = {
-            'fecha_nacimiento': forms.SelectDateWidget
+            'fecha_nacimiento': DateInput()
         }
-class RegistroAvisoForm(forms.ModelForm):
-    Titulo_de_publicacion = forms.CharField(max_length=100, label='Ingrese un Titulo')
-    Comuna = forms.ChoiceField(choices=LISTA_COMUNAS_RM, label='Seleccione la comuna')
-    Region = forms.ChoiceField(choices=LISTA_REGIONES, label='Seleccione la region')
 
+class RegistroAvisoForm(forms.ModelForm):
     class Meta:
         model = RegistroAviso
-        fields = ['Region', 'Comuna', 'Titulo_de_publicacion', 'Descripcion', 'Fecha_publicacion']
+        fields = ['Region', 'Comuna', 'Titulo', 'Descripcion', 'Fecha_publicacion']
 
 
 

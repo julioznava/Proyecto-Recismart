@@ -93,16 +93,16 @@ WSGI_APPLICATION = 'Recismart.wsgi.application'
 # BASE DE DATOS AZURE MYSQL
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'RECISMARTBD2',
-#         'USER': 'recismart',
-#         'PASSWORD': 'sqlserver.2022',
-#         'HOST': 'mysqlrecismart.mysql.database.azure.com',
-#         'PORT': '3306',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'RECISMARTBD2',
+        'USER': 'recismart',
+        'PASSWORD': 'sqlserver.2022',
+        'HOST': 'mysqlrecismart.mysql.database.azure.com',
+        'PORT': '3306',
+    }
+}
 
 DATABASES = {
     'default': {
