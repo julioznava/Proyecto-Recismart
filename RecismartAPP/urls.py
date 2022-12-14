@@ -30,7 +30,7 @@ urlpatterns = [
     path('eliminarusuario/<id>/', eliminarusuario, name='eliminarusuario'),
     path('eliminarecolector/<id>/', eliminarecolector, name='eliminarecolector'),
     path('eliminarpublicacion/<id>/', eliminarpublicacion, name='eliminarpublicacion'),
-
+    path('reportes', reportes, name='reportes'),
 
     #PUBLICACION
     path('registroaviso/', registroaviso, name="registroaviso"),

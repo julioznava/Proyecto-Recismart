@@ -2,8 +2,42 @@
 {% load static %}
 {% load cloudinary %}
 {% block contenido %}
+    <br>
+    <div class="container">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+                <div class="carousel-item active">
+                   {% cloudinary 'Screenshot_1_ysdxdt.png' width=1050 crop="fill" %}
+                </div>
+                <div class="carousel-item">
+                    {% cloudinary 'Screenshot_4_lwk6tq.png' width=1200 crop="fill" %}
+                </div>
+                <div class="carousel-item">
+                  {% cloudinary 'Screenshot_6_gw3blr.png' width=1050 crop="fill" %}
+                </div>
+                <div class="carousel-item">
+                  {% cloudinary 'Screenshot_5_ffvdzn.png' width=1200 crop="fill" %}
+                </div>
+                 <div class="carousel-item">
+                  {% cloudinary 'Screenshot_3_bnfiwq.png' width=1050 crop="fill" %}
+                </div>
+          </div>
+        </div>
+    </div>
+  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        </div>
+    </div>
+    </div>
     <div class="container text-center mt-5">
-          <h3 class="display-6">Publicaciones recomendadas</h3>
+          <h3 class="display-6 bg-secondary rounded-3  p-3 shadow" style="color: white">Publicaciones recomendadas</h3>
             <br>
             <br>
 
@@ -14,7 +48,7 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
             <div class="card h-100">
-              {% cloudinary 'c7rlp49tgycmuii7dy9y.png' width=400 crop="fill" %}
+              {% cloudinary 'c7rlp49tgycmuii7dy9y.png' width=335 crop="fill" %}
               <div class="card-body">
                 <h5 class="card-title">Televisor LG</h5>
                 <p class="card-text">
@@ -29,7 +63,7 @@
           </div>
           <div class="col">
             <div class="card h-100">
-                {% cloudinary 'caxvrip86eubqkvvkolq.png' width=405 crop="fill" %}
+                {% cloudinary 'caxvrip86eubqkvvkolq.png' width=335 crop="fill" %}
               <div class="card-body">
                 <h5 class="card-title">Teclado mecanico</h5>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -41,7 +75,7 @@
           </div>
           <div class="col">
             <div class="card h-100">
-              {% cloudinary 'aew18p3ejqvwwfpfyfzl.png' width=400 crop="fill" %}
+              {% cloudinary 'aew18p3ejqvwwfpfyfzl.png' width=335 crop="fill" %}
               <div class="card-body">
                 <h5 class="card-title">Escritorio de roble</h5>
                 <p class="card-text">

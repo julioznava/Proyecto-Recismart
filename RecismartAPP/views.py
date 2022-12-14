@@ -104,6 +104,10 @@ def registrorecolector(request):
 # ADMINISTRADOR
 
 
+def reportes(request):
+    return render(request, './administrador/reportes.html')
+
+
 def registrocuenta(request):
     context = {
         'form': CustomUserCreationForm()
@@ -215,8 +219,11 @@ def eliminarpublicacion(request, id):
 #PUBLICACIONES
 
 def registroaviso(request):
+    public = RegistroAviso.objects.all()
+
     context = {
         'form': RegistroAvisoForm(),
+        'public': public,
     }
     if request.method == 'POST':
         formulario = RegistroAvisoForm(data=request.POST)
