@@ -1,5 +1,5 @@
 # Recismart
-Projecto Recismart pre-entrega  14-12-2022
+Projecto Recismart pre-entrega  14-12-2022 (En desarrollo!)
 
 
 
