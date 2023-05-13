@@ -1,9 +1,43 @@
 # Recismart
-Projecto Recismart pre-entrega  14-12-2022 (En desarrollo!)
 
 
 
-<h1>Instrucciones para la ejecucion del programa</h1>
+Proyecto realizado con los siguientes lenguajes y frameworks:
+
+* Python (Django)
+
+* HTML
+
+* CSS
+
+* Bootstrap 5
+
+  
+
+###	En que consiste?
+
+Es un sitio en el cual tu puedes ayudar a realizar reciclaje con objetos de cualquier índole que ya no utilices en tu hogar o tu empresa.
+
+Vale decir puedes publicar el objeto que no utilices y otra persona o empresa dedicada al reciclaje se puede contactar contigo y concretar la venta donación o intercambios de productos.
+
+La idea es un sitio sin fines de lucros y ayuda a incentivar a la gente a darle una segunda oportunidad a objetos que ya no esta usando y lo tiene abandonado en su hogar y ayudar a empresas de reciclaje a dar mas protagonismo y cuidar el medio ambiente.
+
+
+
+### Imágenes	
+
+![image](https://github.com/julioznava/Proyecto-Recismart/assets/67343722/04877de9-e9a9-45eb-9a56-14e752454372)
+
+![image](https://github.com/julioznava/Proyecto-Recismart/assets/67343722/538b446f-a5c2-41ae-a034-08f7c402d0e3)
+
+![image](https://github.com/julioznava/Proyecto-Recismart/assets/67343722/f132f4a4-7390-49f2-840c-f04f8bac57e1)
+
+![image](https://github.com/julioznava/Proyecto-Recismart/assets/67343722/eced46eb-7df2-488f-866b-36c3ba18bae2)
+
+![image](https://github.com/julioznava/Proyecto-Recismart/assets/67343722/5c5a976d-ac3b-4de7-9281-c799351ad2e3)
+
+
+##Instrucciones para la ejecucion del programa</h1>
 <h3>Cuentas de login: </h3>
 
      login: test
