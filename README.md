@@ -116,3 +116,5 @@ http://127.0.0.1:8000/registroaviso
 * Mejorar la seguridad de login y segmentar entre recolectores, usuarios y publicadores
 * Tener un sistema de chat para que los mismas personas interesadas puedan tener acceso al usuario que ha publicado.
 * Mejorar las publicaciones recomendadas y las listas de publicaciones (probablemente con sistema de puntuaciones y filtros)
+
+Proyecto realizado por  ® Julio Navarro, Jean Salazar - 2023
