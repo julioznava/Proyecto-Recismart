@@ -37,16 +37,20 @@ La idea es un sitio sin fines de lucros y ayuda a incentivar a la gente a darle 
 ![image](https://github.com/julioznava/Proyecto-Recismart/assets/67343722/5c5a976d-ac3b-4de7-9281-c799351ad2e3)
 
 
-##Instrucciones para la ejecucion del programa</h1>
+
+## Instrucciones de ejecución
+
+
+
 <h3>Cuentas de login: </h3>
 
-     login: test
-    password: taller.2022 ( no disponible aun)
-<br>
+     login: admin
+    password: admin 
+
 <h3>Instrucciones: </h3>
 
 1.  descomprimir el archivo en el escritorio.
-2.  abrir una consola en cmd o terminal en linux
+2.  abrir una consola en cmd o terminal en Linux
 3.  instalar virtualenv
 
 **pip install virtualenv env**
@@ -58,7 +62,7 @@ La idea es un sitio sin fines de lucros y ayuda a incentivar a la gente a darle 
 
     env\Script\activate
 
-5. instalar django en entorno virtual
+5. instalar Django en entorno virtual
 
 
     pip install django
@@ -70,7 +74,7 @@ La idea es un sitio sin fines de lucros y ayuda a incentivar a la gente a darle 
     python manage.py migrate
 
 
-7. Instalar las librerias necesarias en archivo "requeriments.txt"
+7. Instalar las librerías necesarias en archivo "requeriments.txt"
 
 
     pip install -r requirements.txt
@@ -82,7 +86,8 @@ La idea es un sitio sin fines de lucros y ayuda a incentivar a la gente a darle 
     python manage.py runserver
 
 
-<h4>Si desea ejecutar la aplicacion en algun IDE o editor de texto, debe realizar lo mismo. </h4>
+
+#### Si desea ejecutar la aplicación en algún IDE o editor de texto, debe realizar lo mismo. 
 
 
 <h3>Vistas URL (aun en desarrollo)</h3>
@@ -101,3 +106,13 @@ http://127.0.0.1:8000/registro
 http://127.0.0.1:8000/registrorecolector
      
 http://127.0.0.1:8000/registroaviso
+
+
+
+###	Posibles desarrollo futuro y correcciones:
+
+* A nivel de backend implementar mayores funciones, como un dashboard  y alguna sesión para mirar los usuarios que han comentado tu publicación
+
+* Mejorar la seguridad de login y segmentar entre recolectores, usuarios y publicadores
+* Tener un sistema de chat para que los mismas personas interesadas puedan tener acceso al usuario que ha publicado.
+* Mejorar las publicaciones recomendadas y las listas de publicaciones (probablemente con sistema de puntuaciones y filtros)
